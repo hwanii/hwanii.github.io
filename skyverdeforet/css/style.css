@@ -1,0 +1,144 @@
+@charset "utf-8";
+
+body{overflow: hidden;}
+
+/*고정*/
+header{position: fixed; left: 0; top: 0; width: 130px; height: 100%; z-index: 5;}
+header .up-fix{width: 100%; height: 50%; background: #292929;}
+header .up-fix img{display: block; padding-top: 40px; margin: auto; margin-bottom: 40px;}
+header .up-fix p{text-align: center;}
+header .up-fix p span{display: inline-block; width: 2px; height: 24px; background: #ccc; margin-right: 2px;}
+
+header .down-fix{width: 100%; height: 50%; background: #fff;}
+header .down-fix img{display: block; padding-top: 40px; margin: auto; margin-bottom: 40px;}
+header .down-fix .left-text{position: relative; width: 300px; transform: rotate(-90deg); bottom: -25%; right: 85px; }
+header .down-fix .left-text span{font-weight: 700; color: #333; margin-right: 20px;}
+header .down-fix .left-text span:first-child:after{content: ''; position: relative; top: 2px; display: inline-block; width: 2px; height: 14px; background-color: #c8c7cc; margin-left: 20px;}
+header .down-fix .left-text span:nth-child(2){color: #c8c7cc;}
+header .down-fix .left-text span:last-child{margin-left: 20px;}
+
+#nav{position: absolute; top: 0; left: -120px; width: 250px; height: 100%; background: #fff; z-index: -1; transition: left 0.4s;}
+#nav.nav_on{left: 130px;}
+#nav li{width: 100%; height: 50px;}
+#nav li:first-child{margin-top: 50px;}
+#nav li a{display: block; width: 100%; line-height: 50px; padding-left: 20px;}
+
+#nav li a:hover{background: #333; color: #fff;}
+
+
+
+
+/*콘텐츠 영역*/
+
+.contents .conBox{opacity: 0;}
+.contents .conBox.active{opacity: 1;}
+
+
+#page1 .conBox .bg{width: 1920px; height: 1080px; background: url(../image/main01.jpg) no-repeat center/cover;}
+#page2 .conBox .bg{width: 1920px; height: 1080px; background: url(../image/main02.jpg) no-repeat center/cover;}
+#page3 .conBox .bg{width: 1920px; height: 1080px; background: #e9e9e9;}
+
+.contents .conBox .middleBox{position: absolute; top: 50%; right: 0px; transform: translateY(-50%); width: 80%; height: 570px;}
+.contents .conBox .middleBox:after{display: block; content: ''; clear: both;}
+.contents .conBox .middleBox > div{float: left;}
+.contents .conBox .middleBox .leftBox{width: 40%; height: 100%; border: 5px solid #fff; background: url(../image/frame.jpg) no-repeat center;}
+.contents .conBox .middleBox .rightBox{position: relative; width: 60%; height: 100%; background-color: #003638;}
+.contents .conBox .middleBox .rightBox .text{position: absolute; right: 50px; top: 60px; width: 549px; height: 239px; background: url(../image/text.png) no-repeat center/80%;}
+.contents .conBox .middleBox .rightBox .txt{position: absolute; right: 110px; top: 330px; font-size: 18px; color: #fff;}
+.contents .conBox .middleBox .rightBox .txt span{font-size: 20px; font-weight: 900;}
+.contents .conBox .middleBox .rightBox .txt:before{content: ''; position: relative; top: -6px; display: inline-block; width: 150px; height: 2px; background-color: #fff; margin-right: 8px;}
+.contents .conBox .middleBox .rightBox h1{position: absolute; right: 110px; top: 380px; font-family: 'Bookman Old Style', 'san serif'; font-size: 30px; font-weight: 400; color: #fff;}
+.contents .conBox .middleBox .rightBox .openBox{position: absolute; right: 110px; bottom: 60px; width: 320px; height: 64px; background-color: #896b47;}
+.contents .conBox .middleBox .rightBox .openBox{font-size: 24px; font-weight: 700; color: #fff; text-align: center; line-height: 64px;}
+.contents .conBox .middleBox .rightBox .openBox span{color: #e1c32f;}
+
+
+
+
+
+#page2{position: relative; color: #fff;}
+.contents .conBox .page2-textBox{position: absolute; top: 120px; left: 260px;}
+.contents .conBox .page2-textBox h2{font-size: 60px; margin-bottom: 25px}
+.contents .conBox .page2-textBox p{font-size: 30px; margin-bottom: 30px;}
+.contents .conBox .page2-textBox p span{font-size: 36px; font-weight: 700;}
+.contents .conBox .page2-textBox > span{display: block; margin-bottom: 60px;}
+.contents .conBox .page2-textBox a{display: block; width: 130px; height: 110px; background-color: #003638; padding-left: 30px; padding-top: 25px; font-size: 14px;}
+.contents .conBox .page2-textBox a span{font-weight: 700; margin-left: 10px;}
+
+.contents .conBox .under-text{position: absolute; bottom: 40px; right: 40px; font-family: 'Bookman Old Style', 'san serif'; font-weight: 400; font-size: 20px;}
+
+
+
+
+
+
+#page3{position: relative; z-index: -2}
+
+.contents .conBox .page3-text{position: absolute; top: 120px; left: 400px; font-size: 64px;}
+.contents .conBox .top-text{position: absolute; top: 40px; right: 40px; font-family: 'Bookman Old Style', 'san serif'; font-weight: 400; font-size: 20px;}
+
+.contents .conBox .gallery{position: absolute; top: 280px; left: 400px; max-width: 1200px; color: #fff;}
+.contents .conBox .gallery ul:after{display: block; content: ''; display: block;}
+.contents .conBox .gallery ul li{position: relative; float: left; margin-right: 40px; margin-bottom: 40px;}
+.contents .conBox .gallery ul li:nth-child(1){width: 373px; height: 212px; background-image: url(../image/11.jpg);}
+.contents .conBox .gallery ul li:nth-child(2){width: 373px; height: 212px; background-image: url(../image/22.jpg);}
+.contents .conBox .gallery ul li:nth-child(3){width: 373px; height: 212px; background-image: url(../image/33.jpg); margin-right: 0;}
+.contents .conBox .gallery ul li:nth-child(4){width: 373px; height: 212px; background-image: url(../image/44.jpg);}
+.contents .conBox .gallery ul li:nth-child(5){width: 373px; height: 212px; background-image: url(../image/55.jpg);}
+.contents .conBox .gallery ul li:nth-child(6){width: 373px; height: 212px; background-image: url(../image/66.jpg); margin-right: 0;}
+.contents .conBox .gallery ul li i{display: block; width: 100%; height: 100%; background: rgba(0,0,0,0.5);}
+.contents .conBox .gallery ul li p{position: absolute; top: 30px; left: 30px;}
+.contents .conBox .gallery ul li span{position: absolute; bottom: 30px; left: 30px;}
+
+
+
+@media(max-width:1500px){
+    .contents .conBox .top-text{display: none;}
+    .contents .conBox .page3-text{top: 50px; left: 300px;}
+    .contents .conBox .gallery{top: 150px; left: 300px;}
+    .contents .conBox .gallery ul li:nth-child(3){margin-right: 40px;}
+}
+
+
+
+
+/*하단 pager*/
+
+.pager{position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 140px; height: 40px; background: #003638; border-radius: 20px;}
+.pager:after{display: block; content: ''; clear: both;}
+.pager a{float: left; display: block; width: 20px; height: 20px; border-radius: 50%; background: #ddd; margin-right: 20px; margin-top: 10px; opacity: 0.5}
+.pager a:first-child{margin-left: 20px;}
+.pager a.page_on{background: #fff; opacity: 1;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
