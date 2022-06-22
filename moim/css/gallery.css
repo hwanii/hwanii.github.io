@@ -1,0 +1,269 @@
+@charset "utf-8";
+
+#moim_gallery {
+  position: relative;
+  max-width: 1280px;
+  margin: 115px auto 0;
+}
+
+.gallery_title {
+  margin-bottom: 60px;
+}
+
+.gallery_title::after {
+  clear: both;
+  content: '';
+  display: block;
+}
+
+.gallery_title h3 {
+  float: left;
+  font-size: 40px;
+  font-weight: 700;
+  color: #00a0e2;
+}
+
+.gallery_title h3::after {
+  content: '';
+  position: relative;
+  display: inline-block;
+  top: 4px;
+  width: 2px;
+  height: 36px;
+  background-color: #00a0e2;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.gallery_title p {
+  float: left;
+  line-height: 50px;
+}
+
+#moim_gallery .write {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 120px;
+  height: 40px;
+  background-color: #00a0e2;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+}
+
+#moim_gallery .write a {
+  display: block;
+  width: 100%;
+  line-height: 40px;
+}
+
+/***********************************************/
+
+.gallery_table::after {
+  clear: both;
+  content: '';
+  display: block;
+}
+
+.gallery_box {
+  float: left;
+  width: 300px;
+  background-color: #fff;
+  margin-right: 26.33px;
+  margin-bottom: 26px;
+}
+
+.gallery_box:nth-child(4n) {
+  margin-right: 0px;
+}
+
+.gallery_box a {
+  display: block;
+}
+
+.gallery_image {
+  width: 300px;
+  height: 220px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.gallery_contents {
+  padding: 15px 20px 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+.gallery_contents > p {
+  width: 100%;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: keep-all;
+  white-space: nowrap;
+  margin-bottom: 10px;
+}
+
+.gallery_bottom::after {
+  clear: both;
+  content: '';
+  display: block;
+}
+
+.gallery_bottom p {
+  float: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: #9DA5B6;
+}
+
+.gallery_bottom .dot {
+  float: left;
+  position: relative;
+  top: 7px;
+  background-color: #9DA5B6;
+  width: 2px;
+  height: 2px;
+  border-radius: 2px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+/***********************************************/
+
+#moim_gallery .list_pager {
+  max-width: 260px;
+  padding-top: 30px;
+  margin: 0 auto;
+}
+
+#moim_gallery .list_pager::after {
+  clear: both;
+  content: '';
+  display: block;
+}
+
+#moim_gallery .list_pager .number {
+  float: left;
+}
+
+#moim_gallery .list_pager .number::after {
+  clear: both;
+  content: '';
+  display: block;
+}
+
+#moim_gallery .list_pager .number a {
+  float: left;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #eee;
+  border-radius: 0;
+  line-height: 30px;
+  text-align: center;
+  margin-right: 5px;
+}
+
+#moim_gallery .list_pager .number a:last-child {
+  margin-right: 0px;
+}
+
+#moim_gallery .prev, .next {
+  float: left;
+}
+
+#moim_gallery .prev a, .next a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
+#moim_gallery .list_pager .prev {
+  margin-right: 15px;
+}
+
+#moim_gallery .list_pager .next {
+  margin-left: 15px;
+}
+
+#moim_gallery .list_pager .prev a {
+  width: 30px;
+  border: 1px solid #eee;
+  background-color: #fff;
+}
+
+#moim_gallery .list_pager .next a {
+  width: 30px;
+  border: 1px solid #eee;
+  background-color: #fff;
+}
+
+#moim_gallery .list_pager .number .selected {
+  position: relative;
+}
+
+#moim_gallery .list_pager .number .selected:before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #00a0e2;
+}
+
+/***********************************************/
+
+#moim_gallery .search_box {
+  margin-top: 30px;
+  text-align: center;
+}
+
+#moim_gallery .search select {
+  width: 120px;
+  height: 40px;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+  appearance: none;
+  background: #fff url('/images/icon_arrow_down.png') no-repeat 92%;
+  padding-left: 10px;
+  color: #777;
+  font-weight: 500;
+  margin-right: 20px;
+}
+
+#moim_gallery .search input {
+  width: 280px;
+  height: 40px;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+  padding-left: 10px;
+  padding-right: 50px;
+}
+
+#moim_gallery .search button {
+  position: relative;
+  top: -3px;
+  left: -35px;
+  border: 0;
+  width: 21px;
+  height: 21px;
+  background: url('/images/search.png') no-repeat center/cover;
+}
+
+#moim_gallery .search button span {
+  visibility: hidden;
+}
+
+/***********************************************/

@@ -1,0 +1,136 @@
+@charset "utf-8";
+
+.insurance_sub {
+    max-width: 768px;
+    margin: 0 auto;
+    padding-top: 82px;
+}
+
+.insurance_sub_box {
+    padding: 20px 16px 20px;
+    background-color: #fff;
+}
+
+.insurance_sub_box_top:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+.insurance_sub_box_top img {
+    float: left;
+    width: 32px;
+}
+
+.insurance_sub_box .insurance_sub_box_top .insurance_sub_box_topRight {
+    float: left;
+    margin-left: 10px;
+}
+
+.insurance_sub_box
+    .insurance_sub_box_top
+    .insurance_sub_box_topRight
+    div:first-child
+    span:first-child {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.insurance_sub_box
+    .insurance_sub_box_top
+    .insurance_sub_box_topRight
+    div:first-child
+    span:last-child {
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    width: 40px;
+    height: 14px;
+    background-color: #f3f3f3;
+    border-radius: 3px;
+    font-size: 11px;
+    color: #888888;
+    text-align: center;
+}
+
+.insurance_sub_box
+    .insurance_sub_box_top
+    .insurance_sub_box_topRight
+    div:last-child {
+    position: relative;
+    left: 5px;
+    font-size: 10px;
+    color: #888888;
+}
+
+.insurance_sub_box
+    .insurance_sub_box_top
+    .insurance_sub_box_topRight
+    div:last-child
+    span:first-child:after {
+    content: "";
+    position: relative;
+    bottom: 3px;
+    left: 5px;
+    display: inline-block;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: #888888;
+}
+
+.insurance_sub_box
+    .insurance_sub_box_top
+    .insurance_sub_box_topRight
+    div:last-child
+    span:last-child {
+    margin-left: 7px;
+}
+
+.insurance_sub_box p {
+    width: 100%;
+    font-size: 14px;
+    white-space: normal;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.insurance_line {
+    width: 100%;
+    height: 1px;
+    background-color: #eaeaea;
+}
+
+.insuranceA_sub {
+    max-width: 768px;
+    margin: 0 auto;
+}
+
+.insuranceA_sub_box {
+    padding: 15px 16px 15px;
+    background-color: #fff;
+}
+
+.insuranceA_sub_box:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+.insuranceA_sub_box:first-child {
+    padding: 25px 16px 15px;
+}
+
+.insuranceA_sub_box img {
+    float: left;
+    width: 32px;
+}
+
+.insuranceA_sub_box p {
+    float: left;
+    font-size: 12px;
+    max-width: calc(100% - 42px);
+    margin-left: 10px;
+    margin-top: 5px;
+}

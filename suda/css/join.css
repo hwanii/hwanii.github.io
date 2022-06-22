@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+.join {
+    max-width: 768px;
+    margin: auto;
+    padding: 0 16px 120px;
+    background-color: #fff;
+}
+
+.join h2 {
+    font-size: 28px;
+    padding: 60px 0 40px;
+    text-align: center;
+}
+
+.join input {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #efefef;
+    border-radius: 10px;
+}
+
+.join input::placeholder {
+    font-size: 14px;
+    color: #888;
+}
+
+.join button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: #00a0e2;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.join div {
+    text-align: center;
+}
+
+.join div span:first-child {
+    font-size: 14px;
+    color: #888;
+}
+
+.join div span:last-child {
+    font-size: 14px;
+    font-weight: 700;
+    color: #888;
+    margin-left: 15px;
+}

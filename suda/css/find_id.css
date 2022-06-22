@@ -1,0 +1,232 @@
+@charset "utf-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+body {
+    font-family: "Roboto", "Noto Sans KR", sans-serif;
+    color: #333;
+}
+
+.wrap {
+    min-width: 375px;
+    margin: auto;
+    background-color: #eeeeee;
+}
+
+/******************************************************/
+
+header {
+    max-width: 768px;
+    margin: auto;
+    padding: 0 16px;
+    background-color: #fff;
+}
+
+header a {
+    display: block;
+    width: 100px;
+    height: 40px;
+    padding-top: 30px;
+}
+
+header span {
+    display: block;
+    margin-top: 80px;
+    font-size: 12px;
+    color: #999;
+}
+
+header p {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/******************************************************/
+
+.find_logIn {
+    max-width: 768px;
+    margin: auto;
+    padding: 0 16px 0;
+    background-color: #fff;
+}
+
+.find_logIn h2 {
+    font-size: 28px;
+    padding: 60px 0 40px;
+    text-align: center;
+}
+
+.find_logIn input {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #efefef;
+    border-radius: 10px;
+}
+
+.find_logIn input::placeholder {
+    font-size: 14px;
+    color: #888;
+}
+
+.find_logIn button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: #00a0e2;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.find_logIn .still {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.find_logIn .still span:first-child {
+    font-size: 14px;
+    color: #888;
+}
+
+.find_logIn .still span:last-child {
+    font-size: 14px;
+    font-weight: 700;
+    color: #888;
+    margin-left: 15px;
+}
+
+.find_logIn .find {
+    text-align: center;
+}
+
+.find_logIn .find a {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #888;
+}
+
+.copy {
+    font-size: 11px;
+    color: #888;
+    max-width: 768px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #fff;
+}
+
+/******************************************************/
+
+.find_id {
+    max-width: 768px;
+    margin: auto;
+    padding: 0 16px 55px;
+    background-color: #fff;
+}
+
+.find_id h3 {
+    font-size: 28px;
+    padding: 60px 0 40px;
+    text-align: center;
+}
+
+.find_id .id_firstBox button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: #00a0e2;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.find_id .id_secondBox {
+    display: none;
+}
+
+.find_id .id_secondBox input {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #efefef;
+    border-radius: 10px;
+}
+
+.find_id .id_secondBox input::placeholder {
+    font-size: 14px;
+    color: #888;
+}
+
+.find_id .id_secondBox button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: #00a0e2;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.find_id .id_thirdBox {
+    display: none;
+}
+
+.find_id .id_thirdBox input {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #efefef;
+    border-radius: 10px;
+}
+
+.find_id .id_thirdBox input::placeholder {
+    font-size: 14px;
+    color: #888;
+}
+
+.find_id .id_thirdBox button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: #00a0e2;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
