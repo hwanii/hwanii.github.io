@@ -494,3 +494,19 @@ p.copy {font-size: 12px;
   position: relative;
   left: 20px;
 }
+
+/********************************/
+
+@media (max-width: 1440px) {
+  .left-name {
+    display: none;
+  }
+
+  .pager {
+    display: none;
+  }
+
+  .contents .conBox {
+    width: 94%;
+  }
+}
