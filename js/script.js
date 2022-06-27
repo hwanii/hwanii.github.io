@@ -24,7 +24,7 @@ $(function () {
         }
       } else {
         //console.log("down");
-        if (num < 6) {
+        if (num < 7) {
           num++;
         }
       }
@@ -56,10 +56,10 @@ $(function () {
       $("#page1").children(".conBox").addClass("active");
       $(".left-name h2").text("01");
       $(".left-name span").css({background : "#fff"});
-      $(".left-name p").text("한숨").css({
+      $(".left-name p").text("유플러스").css({
         color : "#fff",
-        top : "50px",
-        left : "8px"});
+        top : "70px",
+        left : "5px"});
       $(".copy").css({color : "#ebebeb"});
     }else if(t < 2*h - 400){
       $(".conBox").removeClass('active');
@@ -86,35 +86,42 @@ $(function () {
       $("#page4").children(".conBox").addClass("active");
       $(".left-name h2").text("04");
       $(".left-name span").css({background : "#666"});
-      $(".left-name p").text("유플러스").css({
+      $(".left-name p").text("동구바이오제약").css({
         color : "#666",
-        top : "70px",
-        left : "-1px"});
+        top : "100px",
+        left : "-12px"});
       $(".copy").css({color : "#666"});
     }else if(t < 5*h - 400){
       $(".conBox").removeClass('active');
       $("#page5").children(".conBox").addClass("active");
       $(".left-name h2").text("05");
       $(".left-name span").css({background : "#fff"});
-      $(".left-name p").text("동구바이오제약").css({
+      $(".left-name p").text("앤드소프트").css({
         color : "#fff",
-        top : "100px",
-        left : "-12px"});
+        top : "80px",
+        left : "0px"});
       $(".copy").css({color : "#ebebeb"});
     }else if(t < 6*h - 400){
       $(".conBox").removeClass('active');
       $("#page6").children(".conBox").addClass("active");
       $(".left-name h2").text("06");
       $(".left-name span").css({background : "#666"});
-      $(".left-name p").text("스카이데포레").css({
+      $(".left-name p").text("궁금치").css({
         color : "#666",
-        top : "90px",
-        left : "-4px"});
+        top : "50px",
+        left : "0px"});
       $(".copy").css({color : "#666"});
+    }else if(t < 7*h - 400){
+      $(".conBox").removeClass('active');
+      $("#page7").children(".conBox").addClass("active");
+      $(".left-name h2").text("07");
+      $(".left-name span").css({background : "#fff"});
+      $(".left-name p").text("메타엔젤즈").css({
+        color : "#fff",
+        top : "80px",
+        left : "0px"});
+      $(".copy").css({color : "#ebebeb"});
     }
-    // console.log(t)
-    // console.log("h"+h)
-    // console.log("2h"+(2*h))
   });
 
   $(window).trigger("resize")
