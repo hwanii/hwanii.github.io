@@ -179,6 +179,7 @@ header .inner .nav_btn.on span:nth-child(3) {
     box-shadow: none;
     background: none;
     border: 0;
+    width: 100%;
 }
 
 .slide_bg {
