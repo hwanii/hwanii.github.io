@@ -134,7 +134,7 @@ $(function () {
         autoControls: false,
         pager: false,
         controls: false,
-        slideWidth: 1920
+        slideWidth: 3000
     });
 
 

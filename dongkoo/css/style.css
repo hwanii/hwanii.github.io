@@ -182,6 +182,10 @@ header .inner .nav_btn.on span:nth-child(3) {
     width: 100%;
 }
 
+.slide_contents .bx-wrapper img {
+    width: 100%;
+}
+
 .slide_bg {
     position: absolute;
     top: 0;
