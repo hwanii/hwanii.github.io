@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <?php include '../meta.php'?>
+    <link rel="stylesheet" href="../css/sub.css">
+    <link rel="stylesheet" href="../css/aos.css">
+    <link rel="stylesheet" href="../font/font.css">
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
+</head>
+
+<body>
+    <?php include '../header.php'?>
+    <section class="what register">
+        <div class="what_bg"></div>
+        <div class="inner">
+            <div class="what_inner">
+                <a href="../sub/inquire.php">
+                    <h2>대행 문의</h2>
+                    <div></div>
+                </a>
+                <a href="../sub/edu_register.php">
+                    <h2>교육 신청</h2>
+                    <div></div>
+                </a>
+                <a href="../sub/consulting_register.php">
+                    <h2>컨설팅 신청</h2>
+                    <div></div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <?php include '../classFooter.php'?>
+</body>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../js/script.js"></script>
+<script type="text/javascript" src="../js/aos.js"></script>
+<script type="text/javascript" src="../js/swiper-bundle.min.js"></script>
+
+</html>

@@ -1,0 +1,17 @@
+<?php
+include '../connect.php';
+
+$number=$_POST['number'];
+$file=$_POST['file'];
+
+$dir="../img/emergency/";
+
+$sql="DELETE FROM emer_file WHERE `number`='$number' AND `file`='$file'";
+$res=mysqli_query($conn, $sql);
+
+if($res){
+    unlink($dir.$file);
+
+    echo json_encode("true");
+}
+?>

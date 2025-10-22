@@ -1,0 +1,539 @@
+/* @keyframes graphCircle {
+    0% {
+       
+    }
+    20% {
+       
+    }
+    49% {
+       
+    }
+    50% {
+       
+    }
+    70% {
+       
+    }
+    100% {
+       
+    }
+} */
+
+/* @keyframes graphText {
+    0% {
+        color: #5f328e;
+    }
+    20% {
+        color: #5f328e;
+    }
+    49% {
+        color: #5f328e;
+    }
+    50% {
+        color: #fff;
+    }
+    70% {
+        color: #fff;
+    }
+    100% {
+        color: #fff;
+    }
+} */
+
+/* @keyframes graphBorder {
+    0% {
+        border-bottom: 3px solid #5f328e;
+    }
+    20% {
+        border-bottom: 3px solid #5f328e;
+    }
+    49% {
+        border-bottom: 3px solid #5f328e;
+    }
+    50% {
+        border-bottom: 3px solid #fff;
+    }
+    70% {
+        border-bottom: 3px solid #fff;
+    }
+    100% {
+        border-bottom: 3px solid #fff;
+    }
+} */
+
+/* @keyframes graphBottom {
+    0% {
+       
+    }
+    20% {
+       
+    }
+    49% {
+       
+    }
+    50% {
+       
+    }
+    70% {
+       
+    }
+    100% {
+       
+    }
+} */
+
+/* @keyframes graphBottom1 {
+    0% {
+        color: #5f328e;
+    }
+    20% {
+        color: #5f328e;
+    }
+    49% {
+        color: #5f328e;
+    }
+    50% {
+        color: #fff;
+    }
+    70% {
+        color: #fff;
+    }
+    100% {
+        color: #fff;
+    }
+} */
+
+/* @keyframes graphBg {
+    0% {
+        background: url(../img/main-img01.png) no-repeat center/cover;
+    }
+    20% {
+        background: url(../img/main-img01.png) no-repeat center/cover;
+    }
+    49% {
+        background: url(../img/main-img01.png) no-repeat center/cover;
+    }
+    50% {
+        background: url(../img/main-img02.png) no-repeat center/cover;
+    }
+    70% {
+        background: url(../img/main-img02.png) no-repeat center/cover;
+    }
+    100% {
+        background: url(../img/main-img02.png) no-repeat center/cover;
+    }
+} */
+
+@keyframes flip {
+    0% {
+        transform: rotateX(0deg);
+    }
+    20% {
+        transform: rotateX(0deg);
+    }
+    49% {
+        transform: rotateX(0deg);
+    }
+    50% {
+        transform: rotateX(180deg);
+    }
+    70% {
+        transform: rotateX(180deg);
+    }
+    100% {
+        transform: rotateX(180deg);
+    }
+}
+
+@keyframes graphLeft {
+    0% {
+        opacity: 1;
+        left: 0;
+    }
+    10% {
+        opacity: 1;
+        left: 50%;
+    }
+    49% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes graphDown {
+    0% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 0;
+    }
+    49% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+        left: 0;
+    }
+    60% {
+        opacity: 1;
+        left: 50%;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes reveal {
+    0%{-webkit-mask-position: 100%;opacity: 0;}
+    25%{-webkit-mask-position:0;opacity: 1;}
+    26%{-webkit-mask-position:0;opacity: 0;}
+    50%{-webkit-mask-position:0;opacity: 0;}
+    100%{-webkit-mask-position:0;opacity: 0;}
+}
+
+@keyframes reveal01 {
+    0%{-webkit-mask-position:100%;opacity: 0;}
+    25%{-webkit-mask-position:100%;opacity: 0;}
+    51%{-webkit-mask-position:0;opacity: 1;}
+    100%{-webkit-mask-position:0;opacity: 1;}
+}
+
+
+
+
+
+
+@keyframes graph01 {
+    0% {
+        height: 45px;
+    }
+    20% {
+        height: 45px;
+    }
+    49% {
+        height: 45px;
+    }
+    50% {
+        height: 45px;
+    }
+    70% {
+        height: 45px;
+    }
+    100% {
+        height: 45px;
+    }
+}
+
+@keyframes graph02 {
+    0% {
+        height: 130px;
+    }
+    20% {
+        height: 130px;
+    }
+    49% {
+        height: 130px;
+    }
+    50% {
+        height: 130px;
+    }
+    70% {
+        height: 130px;
+    }
+    100% {
+        height: 130px;
+    }
+}
+
+@keyframes graph03 {
+    0% {
+        height: 90px;
+    }
+    20% {
+        height: 90px;
+    }
+    49% {
+        height: 90px;
+    }
+    50% {
+        height: 90px;
+    }
+    70% {
+        height: 90px;
+    }
+    100% {
+        height: 90px;
+    }
+}
+
+@keyframes graph04 {
+    0% {
+        height: 130px;
+    }
+    20% {
+        height: 130px;
+    }
+    49% {
+        height: 130px;
+    }
+    50% {
+        height: 140px;
+    }
+    70% {
+        height: 140px;
+    }
+    100% {
+        height: 140px;
+    }
+}
+
+@keyframes graph05 {
+    0% {
+        height: 150px;
+    }
+    20% {
+        height: 150px;
+    }
+    49% {
+        height: 150px;
+    }
+    50% {
+        height: 150px;
+    }
+    70% {
+        height: 150px;
+    }
+    100% {
+        height: 150px;
+    }
+}
+
+@keyframes graph06 {
+    0% {
+        height: 130px;
+    }
+    20% {
+        height: 130px;
+    }
+    49% {
+        height: 130px;
+    }
+    50% {
+        height: 180px;
+    }
+    70% {
+        height: 180px;
+    }
+    100% {
+        height: 180px;
+    }
+}
+
+@keyframes graph07 {
+    0% {
+        height: 210px;
+    }
+    20% {
+        height: 210px;
+    }
+    49% {
+        height: 210px;
+    }
+    50% {
+        height: 210px;
+    }
+    70% {
+        height: 210px;
+    }
+    100% {
+        height: 210px;
+    }
+}
+
+@keyframes graph08 {
+    0% {
+        height: 130px;
+    }
+    20% {
+        height: 130px;
+    }
+    49% {
+        height: 130px;
+    }
+    50% {
+        height: 230px;
+    }
+    70% {
+        height: 230px;
+    }
+    100% {
+        height: 230px;
+    }
+}
+
+@keyframes graph09 {
+    0% {
+        height: 275px;
+    }
+    20% {
+        height: 275px;
+    }
+    49% {
+        height: 275px;
+    }
+    50% {
+        height: 280px;
+    }
+    70% {
+        height: 280px;
+    }
+    100% {
+        height: 280px;
+    }
+}
+
+@keyframes graph10 {
+    0% {
+        height: 130px;
+    }
+    20% {
+        height: 130px;
+    }
+    49% {
+        height: 130px;
+    }
+    50% {
+        height: 290px;
+    }
+    70% {
+        height: 290px;
+    }
+    100% {
+        height: 290px;
+    }
+}
+
+@keyframes graph11 {
+    0% {
+        height: 350px;
+    }
+    20% {
+        height: 350px;
+    }
+    49% {
+        height: 350px;
+    }
+    50% {
+        height: 330px;
+    }
+    70% {
+        height: 330px;
+    }
+    100% {
+        height: 330px;
+    }
+}
+
+@keyframes graph12 {
+    0% {
+        height: 130px;
+    }
+    20% {
+        height: 130px;
+    }
+    49% {
+        height: 130px;
+    }
+    50% {
+        height: 350px;
+    }
+    70% {
+        height: 350px;
+    }
+    100% {
+        height: 350px;
+    }
+}
+
+
+
+
+
+
+/* @keyframes clickAbout01 {
+    from {
+        left: 38%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@keyframes clickAbout02 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 50%;
+    }
+} */
+
+/* @keyframes clickAbout01 {
+    from, 20%, 53%, 80%, to {
+        left: 38%;
+       
+        width: 0%;
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        transform: translate3d(0,0,0) translateY(-50%);
+    }
+
+    40%, 43% {
+        animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        transform: translate3d(30px, 0px, 0) translateY(-50%);
+    }
+
+    70% {
+        animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        transform: translate3d(15px, 0px, 0) translateY(-50%);
+    }
+
+    90% {
+        left: 0;
+       
+        width: 50%;
+        transform: translate3d(0,0px,0) translateY(-50%);
+    }
+}
+
+@keyframes clickAbout02 {
+    from, 20%, 53%, 80%, to {
+       
+        width: 0;
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        transform: translate3d(0,0,0) translateY(-50%);
+    }
+
+    40%, 43% {
+        animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        transform: translate3d(30px, 0px, 0) translateY(-50%);
+    }
+
+    70% {
+        animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        transform: translate3d(15px, 0px, 0) translateY(-50%);
+    }
+
+    90% {
+       
+        width: 100%;
+        transform: translate3d(0,0px,0) translateY(-50%);
+    }
+} */

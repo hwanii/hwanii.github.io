@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MEPLACE</title>
+    <meta name="description" content="로컬의 자산을 발굴하고 공간의 경험으로 제안하여 지속가능한 도시와 공간을 만드는 플랫폼 기업입니다.">
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="img/opengraph-img.jpg" />
+    <meta property="og:title" content="MEPLACE" />
+    <meta property="og:description" content="로컬의 자산을 발굴하고 공간의 경험으로 제안하여 지속가능한 도시와 공간을 만드는 플랫폼 기업입니다." />
+    <meta property="og:url" content="http://www.meplace.co.kr/" />
+    <meta name="robots" content="index,follow" />
+    <!-- Mobile Stuff -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Chrome on Android -->
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="">
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="rgba(0,0,0,0)">
+    <meta name="naver-site-verification" content="01f26d1bf9dfb238fe359fb66ee4c816281dd2fe" />
+    <link rel="canonical" href="홈페이지 URL 입력">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+</head>
+
+<body>
+    <?php include 'header.php';?>
+    <div class="swiper-container main-banner">
+        <div class="swiper-wrapper">
+            <?php 
+            $sql="SELECT * FROM slide WHERE background!='' ORDER BY `number` ASC";
+            $res=mysqli_query($conn, $sql);
+            while($row=mysqli_fetch_array($res)){
+                $back=$row['background'];
+                $img=$row['img'];
+                $contents=$row['contents'];
+                $link=$row['link'];
+            ?>
+            <div class="swiper-slide bg01" style="background:url('admin/img/background/<?php echo $back?>') no-repeat center/cover">
+                <div class="bg"></div>
+                <div class="contents">
+                    <img src="admin/img/slider/<?php echo $img?>" alt="circle logo">
+                    <p><?php echo $contents?></p>
+                    <a href="<?php echo $link?>">SEE MORE</a>
+                </div>
+            </div>
+            <?php } ?>
+            <!-- <div class="swiper-slide bg05">
+                <div class="bg"></div>
+                <div class="contents">
+                    <img src="img/circle_logo.png" alt="circle logo">
+                    <p>CIRCLE 1호점 경기도 성남시 분당구 대왕판교로 131 서클</p>
+                    <a href="">SEE MORE</a>
+                </div>
+            </div> -->
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <section class="about">
+        <div class="inner">
+            <div class="title">
+                <h2>ABOUT US</h2>
+                <p>
+                    로컬의 자산을 발굴하고 공간의 경험으로 제안하여 
+                    <strong>지속가능한 도시와 공간을 만드는 플랫폼 기업입니다.</strong>
+                </p>
+            </div>
+            <ul class="contents">
+                <li>
+                    <span></span>
+                    <h3>Research & Service Design</h3>
+                    <div class="line"></div>
+                    <p class="about-mb">
+                        리서치와 분석을 통해 지역이나 건물이 가진<br>
+                        고유의 자원을 발굴하고 서비스 제공자와<br>
+                        사용자 간의 상호 작용을 고려하여 총체적인<br>
+                        과정과 시스템을 디자인합니다.
+                    </p>
+                    <p>
+                        고객과 서비스가 접촉하는 여러 가지 경로와<br>
+                        요소들을 알맞게 창조하고 관리하게 합니다.
+                    </p>
+                </li>
+                <li>
+                    <span></span>
+                    <h3>Space Design</h3>
+                    <div class="line"></div>
+                    <p class="about-mb">
+                        공간의기능을 시간과 경험의 장소로<br>
+                        태어나게 합니다. 
+                    </p>
+                    <p>
+                        공급자 중심의 사고가 아닌 사용자 중심의<br>
+                        사고로 누구든 시간 안에서 하고 싶은 것을<br>
+                        할 수 있는 자유로움과 시간이 주는 기쁨을<br>
+                        나누고자 합니다.
+                    </p>
+                </li>
+                <li>
+                    <span></span>
+                    <h3>Curation & Operation</h3>
+                    <div class="line"></div>
+                    <p class="about-mb">
+                        시장 조사 와 서비스디자인 결과를 바탕으로<br>
+                        공간에 새로운 가치는 부여합니다.
+                    </p>
+                    <p class="about-mb">
+                        또한 적절한 상품의 개발 가격ㆍ분량ㆍ<br>
+                        판매, 유통의 방법을 결정하여 부가가치를<br>
+                        높이고 운영하는것이 지속가능한 공간이<br>
+                        될 수 있도록 합니다.
+                    </p>
+                </li>
+                <li>
+                    <span></span>
+                    <h3>Revitalization</h3>
+                    <div class="line"></div>
+                    <p class="about-mb">
+                        건축적 개념의 도시,공간재생이 아닌<br>
+                        지속가능한 생태계를 만들어 갑니다.
+                    </p>
+                    <p>
+                        성공적인 PPP (Public-Private Project)<br>
+                        상생의 모델을 만들고 경제, 문화, 기술, 창업,<br>
+                        교육 모든 분야에 걸쳐 새로운 생태계를<br>
+                        만들어 드립니다. 우리는 새로운 새로움을<br>
+                        추구합니다.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="update">
+        <div class="inner">
+            <h2>UPDATE</h2>
+            <a href="sub/local.php">VIEW MORE</a>
+            <div class="contents">
+                <?php
+                $lSql="SELECT * FROM bo_local ORDER BY num DESC LIMIT 2";
+                $lRes=mysqli_query($conn, $lSql);
+                while($lRow=mysqli_fetch_array($lRes)){
+                    $title=$lRow['title'];
+                    $contents=$lRow['contents'];
+                    $thumb=$lRow['thumbnail'];
+                ?>
+                <a href="sub/local.php">
+                    <img src="img/file/local/<?php echo $thumb?>" alt="">
+                    <div class="right">
+                        <h3><?php echo $title?></h3>
+                        <p style="word-break: keep-all;">
+                            <?php echo nl2br($contents)?>
+                        </p>
+                    </div>
+                </a>
+                <?php } ?>
+            </div>
+        </div>
+    </section>
+    <section class="business">
+        <div class="inner">
+            <h2>BUSINESS</h2>
+            <a href="sub/life_style.php">FIND MORE</a>
+            <div class="contents">
+                <?php
+                $sql="SELECT * FROM bo_cafe_space ORDER BY num DESC LIMIT 2";
+                $res=mysqli_query($conn, $sql);
+                while($row=mysqli_fetch_array($res)){
+                    $thumb=$row['thumbnail'];
+                    $title=$row['title'];
+                    $addr=$row['file_3'];
+                ?>
+                <a href="sub/life_style.php">
+                    <img src="img/file/cafe_space/<?php echo $thumb?>" alt="">
+                    <h3><?php echo $title?></h3>
+                    <p><?php echo $addr?></p>
+                </a>
+                <?php } ?>
+            </div>
+        </div>
+    </section>
+    <section class="partner">
+        <div class="inner">
+            <h2>PARTNERS</h2>
+            <div class="contents">
+                <?php
+                $pSql="SELECT * FROM bo_partner ORDER BY num DESC";
+                $pRes=mysqli_query($conn, $pSql);
+                while($pRow=mysqli_fetch_array($pRes)){
+                    $pThumb=$pRow['thumbnail'];
+                ?>
+                <div><img src="img/file/partner/<?php echo $pThumb?>" alt=""></div>
+                <?php } ?>
+            </div>
+        </div>
+    </section>
+    <?php include 'footer.php';?>
+</body>
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/aos.js"></script>
+<script type="text/javascript" src="js/swiper-bundle.min.js"></script>
+
+</html>

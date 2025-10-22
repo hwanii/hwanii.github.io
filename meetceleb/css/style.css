@@ -1,0 +1,236 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+
+
+* {padding: 0; margin: 0; border: 0; box-sizing: border-box;}
+li {list-style: none;}
+a {text-decoration: none; color: inherit;}
+img {vertical-align: top; max-width: 100%; filter: none;}
+button {background-color: inherit; cursor: pointer;}
+body {font-family: 'Noto Sans KR', sans-serif; color: #000; overflow-x: hidden;}
+
+
+/* header */
+header {position: fixed; top: 0; left: 50%; transform: translateX(-50%); max-width: 730px; width: 100%; height: 80px; display: flex; margin: 0 auto; z-index: 5000;}
+header a {display: block; width: 50%; height: 100%; line-height: 80px; text-align: center; font-size: 18px; font-weight: 700; color: #fff; background-color: #f6921e;}
+header a:last-child {background-color: #f1f1f1; color: #000;}
+
+.ham_btn {position: fixed; top: 20px; right: 20px; width: 40px; height: 40px; border-radius: 50%; background-color: #000; cursor: pointer; z-index: 9999;}
+.ham_btn span {position: absolute; background-color: #fff;}
+.ham_btn span:nth-child(1) {top: 10px; left: 50%; transform: translate(-50%, -50%); width: 6px; height: 6px; border-radius: 50%;}
+.ham_btn span:nth-child(2) {top: 50%; left: 50%; transform: translate(-50%, -50%); width: 6px; height: 6px; border-radius: 50%;}
+.ham_btn span:nth-child(3) {top: 30px; left: 50%; transform: translate(-50%, -50%); width: 6px; height: 6px; border-radius: 50%;}
+.ham_btn span:nth-child(4) {top: 50%; left: 50%; transform: translate(-50%, -50%); width: 6px; height: 6px; border-radius: 50%; transition: all 0.4s;}
+.ham_btn span:nth-child(5) {top: 50%; left: 50%; transform: translate(-50%, -50%); width: 6px; height: 6px; border-radius: 50%; transition: all 0.4s;}
+
+.ham_btn span:nth-child(4).on {width: 20px; height: 3px; transform: translate(-50%, -50%) rotate(45deg); border-radius: 3px;}
+.ham_btn span:nth-child(5).on {width: 20px; height: 3px; transform: translate(-50%, -50%) rotate(-45deg); border-radius: 3px;}
+
+/* aside */
+aside {position: fixed; top: 80px; right: -240px; width: 240px; z-index: 9998;}
+
+aside .top {width: 100%; padding: 50px 0 15px 35px; background-color: #f6921e; border-top-left-radius: 10px;}
+aside .top img {display: block; margin-bottom: 15px;}
+aside .top .info {display: flex; align-items: center; gap: 20px;}
+aside .top .info a {font-size: 12px; line-height: 12px; color: #fff; position: relative;}
+aside .top .info a::before {content: ''; position: absolute; top: 2px; right: -10px; width: 1px; height: 9px; background-color: #fff;}
+aside .top .info a:last-child::before {display: none;}
+
+aside .gnb {display: flex; flex-direction: column; width: 100%; border-left: 1px solid #cbcbcb;}
+aside .gnb a {display: block; width: 100%; height: 60px; line-height: 60px; padding-left: 15px; background-color: #fff; position: relative;}
+aside .gnb a::before {content: ''; position: absolute; bottom: 0; width: 100%; height: 1px; border-bottom: 1px dashed #cbcbcb;}
+aside .gnb a:last-child::before {display: none;}
+aside .gnb a p {font-size: 14px; color: #666; padding-left: 15px;}
+aside .gnb a:hover {background-color: #4d4d4d;}
+aside .gnb a:hover p {color: #fff;}
+
+aside .bottom {width: 100%; height: 30px; border-bottom-left-radius: 10px; background-color: #f6921e;}
+
+.aside_bg {position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000; opacity: 0.6; z-index: 9997; cursor: pointer; display: none;}
+
+
+/* section */
+section {display: flex; justify-content: center; align-items: center; flex-direction: column; margin-top: 80px;}
+
+section > img {display: block; max-width: 340px; width: 100%; margin: 130px auto 30px;}
+section > h3 {font-size: 24px; text-align: center; color: #4d4d4d; position: relative; top: 5px;}
+section > h2 {font-size: 36px; text-align: center; color: #4d4d4d;}
+section > p {font-size: 36px; font-weight: 100; color: #4d4d4d; position: relative; top: -5px;}
+
+section .login_btn {display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 10px; max-width: 340px; width: 100%; margin: 80px auto 0;}
+section .login_btn a {position: relative; display: block; width: 100%; height: 83px; overflow: hidden; border-radius: 8px;}
+section .login_btn a img {width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+
+
+/* footer */
+footer {max-width: 730px; width: 100%; background-color: #4d4d4d; padding: 40px; margin: 120px auto 0;}
+footer .inner {width: 100%; margin: 0 auto; display: flex; align-items: flex-start;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 반응형 시작 */
+@media(max-width:1650px){
+
+    
+
+}
+
+@media(max-width:1600px){
+
+    
+
+}
+
+@media(max-width:1500px){
+
+    
+
+}
+
+@media(max-width:1440px){
+
+    
+
+}
+
+@media(max-width:1350px){
+
+    
+
+}
+
+@media(max-width:1240px){
+
+    
+
+}
+
+@media(max-width:1200px){
+
+    
+
+}
+
+@media(max-width:1100px){
+
+    
+
+}
+
+@media(max-width:1053px){
+
+    
+
+}
+
+@media(max-width:1024px){
+
+    
+
+}
+
+@media(max-width:939px){
+
+    
+
+} 
+
+@media(max-width:926px){
+
+    
+
+} 
+
+@media(max-width:854px){
+
+    
+
+}
+
+@media(max-width:810px){
+
+    
+
+}
+
+@media(max-width:768px){
+
+    
+
+}
+
+@media(max-width:710px){
+
+    
+
+}
+
+@media(max-width:676px){
+
+    
+
+}
+
+@media(max-width:630px){
+
+    
+
+}
+
+@media(max-width:600px){
+
+    
+
+}
+
+@media(max-width:540px){
+
+    
+
+}
+
+@media(max-width:480px){
+
+    
+
+}
+
+@media(max-width:440px){
+
+    
+
+}
+
+@media(max-width:390px){
+
+
+
+}
+

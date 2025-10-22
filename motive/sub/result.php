@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <title>MOTIVE</title>
+    <meta name="description" content="MOTIVE에서 만드는 나만의 선팅 간편 견적">
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="img/opengraph-img.jpg" />
+    <meta property="og:title" content="MOTIVE" />
+    <meta property="og:description" content="MOTIVE에서 만드는 나만의 선팅 간편 견적" />
+    <meta property="og:url" content="홈페이지 URL 입력" />
+    <meta name="robots" content="index,follow" />
+    <!-- Mobile Stuff -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Chrome on Android -->
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="">
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="rgba(0,0,0,0)">
+    <meta name="naver-site-verification" content="01f26d1bf9dfb238fe359fb66ee4c816281dd2fe" />
+    <link rel="canonical" href="홈페이지 URL 입력">
+    <link rel="stylesheet" href="../css/sub.css">
+    <link rel="stylesheet" href="../css/aos.css">
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
+</head>
+
+<body>
+    <div class="result_body">
+        <?php
+        $header="back";
+        include 'header.php';
+
+        $year=$_GET['year'];
+        $month=$_GET['month'];
+        $week=$_GET['week'];
+        $date=$year."년 ".$month."월 ".$week."주";
+        $name=$_GET['contractName'];
+        $tel=$_GET['contractTel'];
+
+        $uSql="UPDATE counsel SET confirm_time=now(), res_name='$name', tel='$tel', input_date='$date', progress='대기중', stat='미확인' WHERE temp_number='$temp'";
+        $uRes=mysqli_query($conn, $uSql);
+        ?>
+        <div class="result">
+            <p>예약이 완료 되었습니다.<br>추가적인 문의 사항이나 진행 상황은<br>모티브 카카오톡 채널로 문의 주시면<br>잘 상담 드리겠습니다.</p>
+            <a href="" class="result_btn">
+                <img src="../img/kakao02.png" alt="">
+                <p>모티브 카카오톡</p>
+            </a>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../js/script.js"></script>
+<script type="text/javascript" src="../js/aos.js"></script>
+<script type="text/javascript" src="../js/swiper-bundle.min.js"></script>
+
+</html>

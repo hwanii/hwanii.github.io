@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <?php include '../meta.php'?>
+    <link rel="stylesheet" href="../css/sub.css">
+    <link rel="stylesheet" href="../css/aos.css">
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
+</head>
+
+<body>
+    <?php include '../header.php';?>
+    <section class="sub_banner">
+        <div class="txt_box">
+            <h3>ILPA ACADEMY</h3>
+            <h2>국제리샤필라테스협회</h2>
+            <p>전통의 필라테스에 현대의 해부학적 지식을 접목하여 <b>전문적인 필라테스 전문가를 양성하고 있습니다.</b></p>
+            <span>HOME&nbsp;&nbsp;>&nbsp;&nbsp;교육 일정&nbsp;&nbsp;>&nbsp;&nbsp;본사 교육일정</span>
+        </div>
+    </section>
+    <div class="sub_category">
+        <a href="../sub/head_edu.php" class="on">본사 교육일정</a>
+        <a href="../sub/branch_edu.php">지부 교육일정</a>
+        <a href="../sub/workshop.php">워크샵 일정</a>
+    </div>
+    <?php
+    $num=$_GET['num'];
+
+    $sql="SELECT * FROM schedule WHERE num='$num'";
+    $res=mysqli_query($conn, $sql);
+    $row=mysqli_fetch_array($res);
+    $title=$row['title'];
+    $local_name=$row['local_name'];
+    $open_date=$row['open_date'];
+    $period=$row['period'];
+    $tel=$row['tel'];
+    $kakao=$row['kakao'];
+    $contents=$row['contents'];
+    $thumb=$row['thumb'];
+    $num=$row['num'];
+    ?>
+    <section class="schedule">
+        <div class="inner">
+            <div class="detail">
+                <img src="../img/schedule/<?php echo $thumb?>" alt="">
+                <div class="right">
+                    <h2><?php echo $title?></h2>
+                    <div>
+                        <h3>지부</h3>
+                        <p><?php echo $local_name?></p>
+                    </div>
+                    <div>
+                        <h3>개강일</h3>
+                        <p><?php echo $open_date?></p>
+                    </div>
+                    <div>
+                        <h3>기간</h3>
+                        <p><?php echo $period?></p>
+                    </div>
+                    <div>
+                        <h3>문의</h3>
+                        <p><?php echo ($tel) ? "전화문의" : ""?> <?php echo ($kakao) ? (($tel) ? "/ 카카오톡 문의" : "카카오톡 문의") : ""?></p>
+                    </div>
+                    <a href="tel:<?php echo $tel?>" class="call" style="<?php echo ($tel) ? "" : "display:none"?>">
+                        <img src="../img/icon-call.png" alt="">
+                        <p><?php echo $tel?></p>
+                    </a>
+                    <a href="<?php echo $kakao?>" target="_blank" class="kakao" style="<?php echo ($kakao) ? "" : "display:none"?>">
+                        <img src="../img/icon-kakao01.png" alt="">
+                        <p>KAKAO</p>
+                    </a>
+                </div>
+            </div>
+            <?php
+            if(strip_tags($contents)!=""){
+            ?>
+            <div class="detail_contents">
+                <h2>교육 일정 상세 내용</h2>
+                <p><?php echo $contents?></p>
+            </div>
+            <?php } ?>
+            <div class="detail_bottom">
+                <?php
+                $pSql="SELECT * FROM schedule WHERE category='교육' AND `local`='본사' AND num < '$num' ORDER BY num DESC LIMIT 1";
+                $pRes=mysqli_query($conn, $pSql);
+                $pRow=mysqli_fetch_array($pRes);
+                $prev=$pRow['num'];
+                
+                $nSql="SELECT * FROM schedule WHERE category='교육' AND `local`='본사' AND num > '$num' ORDER BY num ASC LIMIT 1";
+                $nRes=mysqli_query($conn, $nSql);
+                $nRow=mysqli_fetch_array($nRes);
+                $next=$nRow['num'];
+                ?>
+                <a href="<?php echo ($prev) ? "head_edu_detail.php?num=".$prev : "javascript:void(0)"?>" style="<?php echo ($prev) ? "" : "visibility:hidden"?>"><img src="../img/list-prev.png" alt=""></a>
+                <a href="head_edu.php">리스트</a>
+                <a href="<?php echo ($next) ? "head_edu_detail.php?num=".$next : "javascript:void(0)"?>" style="<?php echo ($next) ? "" : "visibility:hidden"?>"><img src="../img/list-next.png" alt=""></a>
+            </div>
+        </div>
+    </section>
+    <?php include '../footer.php';?>
+</body>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../js/script.js"></script>
+<script type="text/javascript" src="../js/aos.js"></script>
+<script type="text/javascript" src="../js/swiper-bundle.min.js"></script>
+
+</html>

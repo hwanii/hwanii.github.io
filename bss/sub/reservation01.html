@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <title></title>
+    <meta name="description" content="홈페이지 설명">
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="img/opengraph-img.jpg" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="홈페이지 URL 입력" />
+    <meta name="robots" content="index,follow" />
+    <!-- Mobile Stuff -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="keywords" content="">
+    <!-- Chrome on Android -->
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="">
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="rgba(0,0,0,0)">
+    <meta name="naver-site-verification" content="01f26d1bf9dfb238fe359fb66ee4c816281dd2fe" />
+    <link rel="canonical" href="홈페이지 URL 입력">
+    <link rel="stylesheet" href="../css/aos.css">
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <img src="../img/main-back.png" class="main_bg">
+    <header>
+        <div class="inner">
+            <a href="javascript:void(0)"><img src="../img/icon-menu.png"></a>
+            <div class="language">
+                <a href="../index.html">KOR</a>
+                <a href="">ENG</a>
+            </div>
+        </div>
+        <h1><a href="../index.html"><img src="../img/logo.png"></a></h1>
+    </header>
+    <aside>
+        <div class="close">
+            <span></span>
+            <span></span>
+        </div>
+        <a href="../index.html"><img src="../img/b-logo.png"></a>
+        <div class="gnb">
+            <a href="../sub/reservation.html">
+                <p>예약하기</p>
+                <div class="line"></div>
+                <img src="../img/icon-main01.png">
+            </a>
+            <a href="../sub/search.html">
+                <p>조회하기</p>
+                <div class="line"></div>
+                <img src="../img/icon-main02.png">
+            </a>
+            <a href="../sub/process.html">
+                <p>진행하기</p>
+                <div class="line"></div>
+                <img src="../img/icon-main03.png">
+            </a>
+            <a href="../sub/ask.html">
+                <p>상담하기</p>
+                <div class="line"></div>
+                <img src="../img/icon-main04.png">
+            </a>
+        </div>
+    </aside>
+    <section class="reservation">
+        <div class="inner">
+            <div class="main_title">
+                <h2>예약하기</h2>
+            </div>
+            <div class="sub_title">
+                <p>공항</p>
+                <span>&#62;</span>
+                <p>호텔</p>
+            </div>
+            <div class="reservation_contents">
+                <div class="input_contents">
+                    <div class="top">
+                        <h2>베트남 도착 일자</h2>
+                        <p>입국하시는 일자를 선택해주세요</p>
+                    </div>
+                    <div class="bottom">
+                        <img src="../img/icon-calendar.jpg" class="date_icon" onclick="document.querySelector('.date').focus();">
+                        <input type="date" class="date" onfocus="this.showPicker();">
+                    </div>
+                </div>
+                <div class="input_contents">
+                    <div class="top">
+                        <h2>베트남 도착 시간</h2>
+                        <p>도착 예정 시간을 작성해주세요</p>
+                    </div>
+                    <div class="bottom">
+                        <img src="../img/icon-time.jpg" class="time_icon" onclick="document.querySelector('.time').focus();">
+                        <input type="time" class="time" onfocus="this.showPicker();">
+                    </div>
+                </div>
+                <div class="input_contents">
+                    <div class="top">
+                        <h2>공항 선택하기</h2>
+                        <p>도착하실 공항을 선택해주세요</p>
+                    </div>
+                    <div class="bottom">
+                        <select>
+                            <option>공항을 선택해주세요</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input_contents hotel">
+                    <div class="top">
+                        <h2>호텔 찾기</h2>
+                        <p>도착하시는 호텔을 선택해주세요</p>
+                    </div>
+                    <div class="bottom">
+                        <img src="../img/icon-search.png">
+                        <input type="text">
+                    </div>
+                    <p class="warning">
+                        지역에 따라 추가 요금이 발생합니다.<br>
+                        다낭의 경우 미카즈키, 인터컨티넨털 / 호이안의 경우 남 호이안 지역은<br>
+                        5,000원의 추가비용이 발생합니다.
+                    </p>
+                </div>
+                <div class="input_contents hotel">
+                    <div class="top">
+                        <h2>외부 결제 선택</h2>
+                        <p>외부 결제를 선택해주세요.</p>
+                    </div>
+                    <div class="bottom">
+                        <select name="airport">
+                            <option value="" disabled selected>외부결제를 선택해주세요</option>
+                            <option value="몽키트레블">몽키트레블</option>
+                            <option value="마이리얼트립">마이리얼트립</option>
+                            <option value="네이버스마트스토어">네이버스마트스토어</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="cargo_contents" style="margin-top: 40px;">
+                    <div class="left">
+                        <h2>수화물 배송 편도 요금 1~3개</h2>
+                        <p>
+                            수화물 개수 1~3개까지 가격입니다.<br>
+                            (세트형 캐리어, 쇼핑백, 비닐봉지도<br>각 1개로 처리됩니다.)<br>
+                            4개가 넘는 분은 아래의 추가 요금 수량을<br>입력해주세요.
+                        </p>
+                    </div>
+                    <div class="right">
+                        <h2>수량</h2>
+                        <div class="quantity">
+                            <input type="number" name="count" min="0" step="1" value="0">
+                        </div>
+                    </div>
+                </div>
+                <div class="cargo_contents">
+                    <div class="left">
+                        <h2>수화물 배송 편도 추가 화물</h2>
+                        <p>4개 이후 각 가격입니다.</p>
+                    </div>
+                    <div class="right">
+                        <h2>수량</h2>
+                        <div class="quantity">
+                            <input type="number" name="count" min="0" step="1" value="0">
+                        </div>
+                    </div>
+                </div>
+                <div class="cargo_contents">
+                    <div class="left">
+                        <h2>지역 추가 요금</h2>
+                        <p>4개 이후 각 가격입니다.</p>
+                    </div>
+                    <div class="right">
+                        <p>0,000원</p>
+                    </div>
+                </div>
+                <div class="cargo_contents">
+                    <div class="left">
+                        <h2>22시 이후 보관함 요금</h2>
+                        <p>
+                            22시 이후에는 보관함에 보관되며<br>
+                            예약자님의 휴대폰 번호 마지막 4자리로 설정됩니다.
+                        </p>
+                    </div>
+                    <div class="right">
+                        <p>0,000원</p>
+                    </div>
+                </div>
+                <div class="bottom_contents" style="margin-top: 40px;">
+                    <div class="left">
+                        <h2>예약자명</h2>
+                        <p>
+                            반드시 여권 영문명으로 입력해주세요.<br>
+                            호텔 예약자명과 동일한 이름으로 예약해주세요.
+                            <br><br>
+                            본인이 호텔 예약자가 아닌 경우,<br>
+                            원활한 배송을 위해 호텔 예약자명을 입력해주세요<br>
+                            호텔 → 호텔 배송은, 반드시 도착호텔 예약자명을<br>
+                            입력하셔야 합니다.
+                        </p>
+                    </div>
+                    <div class="right">
+                        <input type="text" name="name" placeholder="국문" required>
+                        <input type="text" name="name" placeholder="영문" required>
+                    </div>
+                </div>
+                <div class="bottom_contents">
+                    <div class="left">
+                        <h2>휴대전화번호</h2>
+                        <p>예약하시는 분의 휴대 전화번호를 입력해주세요</p>
+                    </div>
+                    <input type="tel" name="tel" maxlength="15" onkeyup="this.value=this.value.replace(/[^-0-9]/g,'');" required>
+                </div>
+            </div>
+            <div class="reservation_pop_btn">
+                <a href="../sub/estimate.html">견적 보기</a>
+                <a href="javascript:void(0);">담아 두기</a>
+            </div>
+            <div class="keep_pop">
+                <div class="close">
+                    <span></span>
+                    <span></span>
+                </div>
+                <p>
+                    담아둔 예약은 <b>담아두기 조회</b>에서<br>
+                    예약번호 + 전화번호 확인 후 결제가 가능합니다.
+                </p>
+                <a href="../sub/search.html">조회하기</a>
+            </div>
+            <div class="keep_pop_bg"></div>
+        </div>
+    </section>
+</body>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script src="../js/aos.js"></script>
+<script src="../js/swiper-bundle.min.js"></script>
+<script src="../js/script.js"></script>
+
+<script>
+    $(document).ready(function(){
+        jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up"><img src="../img/input-up.png"></div><div class="quantity-button quantity-down"><img src="../img/input-down.png"></div></div>').insertAfter('.quantity input');
+
+        jQuery('.quantity').each(function(){
+            var spinner = jQuery(this),
+                input = spinner.find('input[type="number"]'),
+                btnUp = spinner.find('.quantity-up'),
+                btnDown = spinner.find('.quantity-down'),
+                inputStep = input.attr('step'),
+                min = input.attr('min');
+
+            btnUp.click(function() {
+                var inputStepVal = parseFloat(inputStep);
+                var oldValue = parseFloat(input.val());
+                var newVal = oldValue + inputStepVal;
+                spinner.find("input[type='number']").val(newVal);
+                spinner.find("input[type='number']").trigger("change");
+            });
+
+            btnDown.click(function() {
+                var inputStepVal = parseFloat(inputStep);
+                var oldValue = parseFloat(input.val());
+                    if (oldValue <= min) {
+                        var newVal = oldValue;
+                    } else {
+                        var newVal = oldValue - inputStepVal;
+                    }
+                spinner.find("input[type='number']").val(newVal);
+                spinner.find("input[type='number']").trigger("change");
+            });
+        });
+    })
+</script>
+
+</html>
