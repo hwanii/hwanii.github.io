@@ -2,7 +2,7 @@ import axios from "axios";
 
 // ================== Axios 인스턴스 생성 ==================
 const api = axios.create({
-  baseURL: "http://localhost:8080/api", // 기본 URL
+  baseURL: "http://13.124.172.253:8080/api", // 기본 URL
   withCredentials: true, // 쿠키가 필요할 경우
 });
 
