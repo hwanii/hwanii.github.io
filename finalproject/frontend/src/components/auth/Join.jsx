@@ -44,7 +44,7 @@ function Join() {
       return;
     }
     try {
-      const res = await axios.get(`http://localhost:8080/api/users/check-id`, {
+      const res = await axios.get(`http://13.124.172.253:8080/api/users/check-id`, {
         params: { loginId: id }   // Controller @RequestParam 이름과 동일
       });
       setUserIdValid(res.data ? "duplicate" : "valid"); // true면 이미 존재
@@ -62,7 +62,7 @@ function Join() {
       return;
     }
     try {
-      const res = await axios.get(`http://localhost:8080/api/users/check-email`, {
+      const res = await axios.get(`http://13.124.172.253:8080/api/users/check-email`, {
         params: { email }   // Controller @RequestParam 이름과 동일
       });
       setEmailValid(res.data.valid); // valid: 중복 없으면 true
@@ -125,7 +125,7 @@ function Join() {
 
     try {
       await axios.post(
-          "http://localhost:8080/api/head/signup",
+          "http://13.124.172.253:8080/api/head/signup",
           sendData,
           { headers: { "Content-Type": "multipart/form-data" } }
       );

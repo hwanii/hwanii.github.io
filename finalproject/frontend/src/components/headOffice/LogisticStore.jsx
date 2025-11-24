@@ -41,7 +41,7 @@ function LogisticStore() {
     const fetchData = async () => {
         setLoading(true);
         try {
-            const res = await axios.get("http://localhost:8080/api/logisticproducts", {headers: {Authorization: `Bearer ${token}`}});
+            const res = await axios.get("http://13.124.172.253:8080/api/logisticproducts", {headers: {Authorization: `Bearer ${token}`}});
 
             console.log("API 응답 데이터:", res.data);
             console.log("첫 번째 항목:", res.data[0]);
@@ -111,7 +111,7 @@ function LogisticStore() {
     const handleUpdate = async (lpKey, quantity) => {
         try {
             if (!quantity || quantity <= 0) return;
-            await axios.post(`http://localhost:8080/api/logistic-store/${lpKey}/update`, null, {
+            await axios.post(`http://13.124.172.253:8080/api/logistic-store/${lpKey}/update`, null, {
                     headers: {Authorization: `Bearer ${token}`},
                     params: {quantity}
                 }
@@ -156,7 +156,7 @@ function LogisticStore() {
                         throw new Error(`lpKey가 없습니다: ${JSON.stringify(p)}`);
                     }
 
-                    return axios.post(`http://localhost:8080/api/logistic-store/${p.lpKey}/update`, null, {
+                    return axios.post(`http://13.124.172.253:8080/api/logistic-store/${p.lpKey}/update`, null, {
                         headers: {Authorization: `Bearer ${token}`},
                         params: {quantity: p.lpStoreInput}
                     });

@@ -21,7 +21,7 @@ export default function OrderDetail() {
 
     useEffect(() => {
         // 주문 아이템 가져오기
-        axios.get(`http://localhost:8080/api/agencyorder/items/${orKey}`, {headers: {Authorization: `Bearer ${token}`}})
+        axios.get(`http://13.124.172.253:8080/api/agencyorder/items/${orKey}`, {headers: {Authorization: `Bearer ${token}`}})
             .then(res => {
                 const data = res.data ?? [];
                 const sorted = sortItems(data, sortField, sortOrder);
@@ -30,7 +30,7 @@ export default function OrderDetail() {
             .catch(err => console.error(err));
 
         // 주문 정보 가져오기
-        axios.get(`http://localhost:8080/api/agencyorder/${orKey}/info`, {headers: {Authorization: `Bearer ${token}`}})
+        axios.get(`http://13.124.172.253:8080/api/agencyorder/${orKey}/info`, {headers: {Authorization: `Bearer ${token}`}})
             .then(res => setOrderInfo(res.data ?? {}))
             .catch(err => console.error(err));
     }, [orKey, sortField, sortOrder]);

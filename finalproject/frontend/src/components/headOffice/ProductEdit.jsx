@@ -441,8 +441,8 @@ function ProductEdit() {
                                                 typeof editProduct.pdImage === 'string' && editProduct.pdImage.startsWith('data:')
                                                     ? editProduct.pdImage
                                                     : editProduct.pdImage.startsWith('/uploads/')
-                                                        ? `http://localhost:8080${editProduct.pdImage}`
-                                                        : `http://localhost:8080/uploads/product/${editProduct.pdImage}`
+                                                        ? `http://13.124.172.253:8080${editProduct.pdImage}`
+                                                        : `http://13.124.172.253:8080/uploads/product/${editProduct.pdImage}`
                                             }
                                             alt="preview"
                                         />

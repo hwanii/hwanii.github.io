@@ -26,7 +26,7 @@ function UserDelete() {
   const handleRegisterSuccess = async () => {
     closeRegister();
     try {
-      const res = await axios.get("http://localhost:8080/api/users/list", {
+      const res = await axios.get("http://13.124.172.253:8080/api/users/list", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUsers(res.data);
@@ -74,7 +74,7 @@ function UserDelete() {
     try {
       // ✅ 백엔드로 타입 포함해서 전송
       await axios.post(
-        "http://localhost:8080/api/users/delete",
+        "http://13.124.172.253:8080/api/users/delete",
         { users: usersToDelete },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -95,7 +95,7 @@ function UserDelete() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/api/users/list", {
+        const res = await axios.get("http://13.124.172.253:8080/api/users/list", {
           headers: { Authorization: `Bearer ${token}` }
         });
         setUsers(res.data);

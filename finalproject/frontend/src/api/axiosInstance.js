@@ -8,7 +8,7 @@ export const useApi = () => {
     const { token, logout } = useContext(AuthContext);
 
     const instance = axios.create({
-        baseURL: "http://localhost:8080",
+        baseURL: "http://13.124.172.253:8080",
         withCredentials: true,
     });
 
@@ -43,7 +43,7 @@ export const useApi = () => {
 
 // ===================== 일반 JS용 인스턴스 =====================
 export const api = axios.create({
-    baseURL: "http://localhost:8080",
+    baseURL: "http://13.124.172.253:8080",
     withCredentials: true,
 });
 

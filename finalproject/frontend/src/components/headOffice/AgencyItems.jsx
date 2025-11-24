@@ -448,8 +448,8 @@ function AgencyItems() {
                                         <div className={headStyles.list_flex}>
                                             <PdImgZoom imageUrl={
                                                 product.pdImage.startsWith('/uploads/')
-                                                    ? `http://localhost:8080${product.pdImage}`
-                                                    : `http://localhost:8080/uploads/product/${product.pdImage}`
+                                                    ? `http://13.124.172.253:8080${product.pdImage}`
+                                                    : `http://13.124.172.253:8080/uploads/product/${product.pdImage}`
                                             } altText={product.pdProducts}>
                                                 <button className={headStyles.pd_zoom}></button>
                                             </PdImgZoom>
@@ -534,8 +534,8 @@ function AgencyItems() {
                                         <div className={headStyles.list_flex}>
                                             <PdImgZoom imageUrl={
                                                 product.pdImage.startsWith('/uploads/')
-                                                    ? `http://localhost:8080${product.pdImage}`
-                                                    : `http://localhost:8080/uploads/product/${product.pdImage}`
+                                                    ? `http://13.124.172.253:8080${product.pdImage}`
+                                                    : `http://13.124.172.253:8080/uploads/product/${product.pdImage}`
                                             } altText={product.pdProducts}>
                                                 <button className={headStyles.pd_zoom}></button>
                                             </PdImgZoom>

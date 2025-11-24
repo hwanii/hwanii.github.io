@@ -8,7 +8,7 @@ import NoticeDetail from './NoticeDetail';
 import { AuthContext } from '../../context/AuthContext.jsx';
 // 정환 추가
 
-const API_URL = "http://localhost:8080/api/notices";
+const API_URL = "http://13.124.172.253:8080/api/notices";
 
 function NoticeRegister() {
 

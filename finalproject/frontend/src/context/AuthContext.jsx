@@ -51,7 +51,7 @@ export const AuthProvider = ({ children }) => {
       // ✅ 유저 정보 가져오기 (await 필수)
       if (role === "agency" || role === "logistic") {
         const type = role === "agency" ? "agency" : "logistic";
-        const res = await axios.get(`http://localhost:8080/api/${type}/mypage/${userId}`, {
+        const res = await axios.get(`http://13.124.172.253:8080/api/${type}/mypage/${userId}`, {
           headers: { Authorization: `Bearer ${newToken}` },
         });
         setUserInfo(res.data);
@@ -89,7 +89,7 @@ export const AuthProvider = ({ children }) => {
           const type = agId ? "agency" : "logistic";
           const id = agId || lgId;
 
-          const res = await axios.get(`http://localhost:8080/api/${type}/mypage/${id}`, {
+          const res = await axios.get(`http://13.124.172.253:8080/api/${type}/mypage/${id}`, {
             headers: { Authorization: `Bearer ${token}` },
           });
           setUserInfo(res.data);

@@ -41,8 +41,8 @@ function TopBar() {
             try {
                 const url =
                     payload.role === "agency"
-                        ? `http://localhost:8080/api/agency/mypage/${payload.sub}`
-                        : `http://localhost:8080/api/logistic/mypage/${payload.sub}`;
+                        ? `http://13.124.172.253:8080/api/agency/mypage/${payload.sub}`
+                        : `http://13.124.172.253:8080/api/logistic/mypage/${payload.sub}`;
 
                 const res = await fetch(url, {
                     headers: {Authorization: `Bearer ${token}`},

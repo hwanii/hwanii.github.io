@@ -38,8 +38,8 @@ function PdImgZoom({ imageUrl, altText, children }) {
                         ? (imageUrl.startsWith('http')
                             ? imageUrl
                             : imageUrl.startsWith('/uploads/')
-                                ? `http://localhost:8080${imageUrl}`
-                                : `http://localhost:8080/uploads/product/${imageUrl}`)
+                                ? `http://13.124.172.253:8080${imageUrl}`
+                                : `http://13.124.172.253:8080/uploads/product/${imageUrl}`)
                         : placeholderImageUrl
                 }
                 alt={`${altText || "제품"} 이미지`}

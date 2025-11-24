@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import axios from 'axios';
 import popupStyles from './HeadPopup.module.css';
 
-const API_URL = 'http://localhost:8080/api/notices';
+const API_URL = 'http://13.124.172.253:8080/api/notices';
 
 function NoticeDetail ({ noticeDetail, onDelete, onSave, readOnly = false, onClose }) {
     if (!noticeDetail) return null;

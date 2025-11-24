@@ -23,7 +23,7 @@ function Status() {
     });
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/status', {
+        axios.get('http://13.124.172.253:8080/api/status', {
             headers: {Authorization: `Bearer ${token}`}
         })
             .then(res => {

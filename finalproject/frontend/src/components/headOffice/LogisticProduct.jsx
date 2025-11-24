@@ -36,7 +36,7 @@ function LogisticProduct() {
     const fetchProducts = async () => {
         setLoading(true);
         try {
-            const res = await axios.get('http://localhost:8080/api/logisticproducts', {
+            const res = await axios.get('http://13.124.172.253:8080/api/logisticproducts', {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 }, // 정환 추가

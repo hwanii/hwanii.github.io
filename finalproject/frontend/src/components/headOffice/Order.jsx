@@ -25,7 +25,7 @@ function Order() {
 
     const fetchOrders = async () => {
         try {
-            const res = await axios.get('http://localhost:8080/api/agencyorder/search', { params: searchParams });
+            const res = await axios.get('http://13.124.172.253:8080/api/agencyorder/search', { params: searchParams });
             let mappedOrders = res.data.map(order => ({
                 ...order,
                 displayStatus: order.orStatus === '배송 준비중' ? '승인 완료' : order.orStatus,
@@ -85,7 +85,7 @@ function Order() {
     // ===== 주문 확정 =====
     const handleConfirmOrders = async () => {
         try {
-            await axios.post('http://localhost:8080/api/agencyorder/confirm/order', { orderIds: selectedOrderIds });
+            await axios.post('http://13.124.172.253:8080/api/agencyorder/confirm/order', { orderIds: selectedOrderIds });
             fetchOrders();
             setSelectedOrderIds([]);
             alert('선택한 주문이 주문 처리 완료 상태로 변경되었습니다.');

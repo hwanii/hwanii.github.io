@@ -32,7 +32,7 @@ function AgencyProduct() {
     const fetchProducts = async () => {
         setLoading(true);
         try {
-            const res = await axios.get('http://localhost:8080/api/agency/agencyproducts', {
+            const res = await axios.get('http://13.124.172.253:8080/api/agency/agencyproducts', {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 }, // 정환 추가

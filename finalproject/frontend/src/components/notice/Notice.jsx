@@ -6,7 +6,7 @@ import styles from './notice.module.css';
 import { AuthContext } from '../../context/AuthContext.jsx';
 // 정환 추가
 
-const API_URL = 'http://localhost:8080/api/notices';
+const API_URL = 'http://13.124.172.253:8080/api/notices';
 
 // role: 'head_office' | 'logistic' | 'agency'
 const Notice = forwardRef(function Notice({ role = 'head_office', limit = Infinity, onNoticeClick }, ref) {
