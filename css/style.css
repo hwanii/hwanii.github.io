@@ -28,7 +28,7 @@ header h2 {font-family: serif; font-style: italic; font-size: 36px; font-weight:
 .wrap .right .contents img {width: 100%; transition: all 0.3s; border: 1px solid #000; border-radius: 10px;}
 .wrap .right .contents h2 {overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 21px; line-height: 21px; margin-top: 15px; margin-bottom: 10px;}
 .wrap .right .contents p {font-size: 15px; display: flex;}
-.wrap .right .contents p span:first-child {display: block; width: 70px; text-align: right;}
+.wrap .right .contents p span:first-child {display: block; width: 75px; text-align: right;}
 .wrap .right .contents p span:last-child {display: block; width: calc(100% - 70px); word-break: keep-all;}
 .wrap .right .contents p:last-child {margin-top: 3px;}
 
