@@ -26,7 +26,7 @@ function UserDelete() {
   const handleRegisterSuccess = async () => {
     closeRegister();
     try {
-      const res = await axios.get("http://13.124.172.253:8080/api/users/list", {
+      const res = await axios.get("http://localhost:8080/api/users/list", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUsers(res.data);
@@ -56,7 +56,7 @@ function UserDelete() {
 
   // 선택 삭제
   const handleDeleteSelected = async () => {
-    // ✅ 체크된 유저만 골라서 { id, type } 형태로 변환
+    // 체크된 유저만 골라서 { id, type } 형태로 변환
     const usersToDelete = users
       .filter(u => checkedUsers[getUserKey(u)])
       .map(u => ({
@@ -72,14 +72,14 @@ function UserDelete() {
     if (!window.confirm(`${usersToDelete.length}명의 유저를 정말 삭제하시겠습니까?`)) return;
 
     try {
-      // ✅ 백엔드로 타입 포함해서 전송
+      // 백엔드로 타입 포함해서 전송
       await axios.post(
-        "http://13.124.172.253:8080/api/users/delete",
+        "http://localhost:8080/api/users/delete",
         { users: usersToDelete },
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
-      // ✅ 프론트에서도 삭제 반영
+      // 프론트에서도 삭제 반영
       setUsers(prev => prev.filter(u =>
         !usersToDelete.some(del => del.id === u.userKey && del.type === u.type)
       ));
@@ -95,7 +95,7 @@ function UserDelete() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await axios.get("http://13.124.172.253:8080/api/users/list", {
+        const res = await axios.get("http://localhost:8080/api/users/list", {
           headers: { Authorization: `Bearer ${token}` }
         });
         setUsers(res.data);
@@ -125,10 +125,8 @@ function UserDelete() {
             </div>
           </div>
 
-          {/*진경 수정*/}
           <div className={headStyles.right_select}>
             <button className={`${headStyles.btn} ${headStyles.register}`} onClick={openRegister}>등록</button>
-            {/*<button className={`${headStyles.btn} ${headStyles.search}`}>검색</button>*/}
             <button className={`${headStyles.btn} ${headStyles.delete}`} onClick={handleDeleteSelected}>삭제</button>
           </div>
           {/*//진경 수정*/}

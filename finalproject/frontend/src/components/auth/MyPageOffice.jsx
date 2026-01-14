@@ -59,7 +59,7 @@ function MyPageOffice() {
 
     const fetchUserData = async () => {
       try {
-        const url = `http://13.124.172.253:8080/api/head/mypage/${hdId}`;
+        const url = `http://localhost:8080/api/head/mypage/${hdId}`;
         console.log("유저 데이터 요청 시작:", url);
 
         const res = await axios.get(url, {
@@ -81,7 +81,7 @@ function MyPageOffice() {
         });
 
         if (userData.hdProfile) {
-          setPreview(`http://13.124.172.253:8080${userData.hdProfile}`);
+          setPreview(`http://localhost:8080${userData.hdProfile}`);
         }
       } catch (err) {
         console.error("유저 데이터 불러오기 실패:", err);
@@ -115,7 +115,7 @@ function MyPageOffice() {
   const checkEmail = async () => {
     if (!formData.email.trim()) return;
     try {
-      const res = await axios.get(`http://13.124.172.253:8080/api/head/checkEmail`, {
+      const res = await axios.get(`http://localhost:8080/api/head/checkEmail`, {
         params: { hd_email: formData.email },
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -160,7 +160,7 @@ function MyPageOffice() {
       const payload = parseJwt(token);
       const hdId = payload?.sub;
 
-      await axios.put(`http://13.124.172.253:8080/api/head/mypage/${hdId}`, sendData, {
+      await axios.put(`http://localhost:8080/api/head/mypage/${hdId}`, sendData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,

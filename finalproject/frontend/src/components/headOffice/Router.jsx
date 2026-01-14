@@ -12,8 +12,6 @@ import Status from "./Status.jsx";
 import Inbound from "./Inbound.jsx";
 import LogisticStore from "./LogisticStore.jsx";
 
-
-
 function Router () {
   return (
     <Routes>

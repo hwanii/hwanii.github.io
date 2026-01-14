@@ -29,7 +29,7 @@ function Header() {
       const hdId = payload?.sub;
 
       if (hdId) {
-        axios.get(`http://13.124.172.253:8080/api/head/mypage/${hdId}`, {
+        axios.get(`http://localhost:8080/api/head/mypage/${hdId}`, {
           headers: { Authorization: `Bearer ${token}` }
         })
           .then(res => setUserInfo(res.data))
@@ -57,7 +57,7 @@ function Header() {
             <span className={layoutStyles.userImg}>
                 {userInfo?.hdProfile ? (
                   <img
-                    src={`http://13.124.172.253:8080${userInfo.hdProfile}`}
+                    src={`http://localhost:8080${userInfo.hdProfile}`}
                     alt="프로필"
                   />
                 ) : (

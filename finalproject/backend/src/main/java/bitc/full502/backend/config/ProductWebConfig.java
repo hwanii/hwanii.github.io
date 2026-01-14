@@ -8,12 +8,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class ProductWebConfig implements WebMvcConfigurer {
 
-    @Value("${app.upload.product.dir}")
-    private String productUploadDir;
+  @Value("${app.upload.product.dir}")
+  private String productUploadDir;
 
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/uploads/product/**")
-            .addResourceLocations("file:" + productUploadDir + "/");
-    }
+  @Override
+  public void addResourceHandlers(ResourceHandlerRegistry registry) {
+    registry.addResourceHandler("/uploads/product/**")
+      .addResourceLocations("file:" + productUploadDir + "/");
+  }
 }

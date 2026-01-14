@@ -11,20 +11,20 @@ import java.util.*;
 @RestController
 public class GraphController {
 
-    private final GraphService graphService;
+  private final GraphService graphService;
 
-    public GraphController(GraphService graphService) {
-        this.graphService = graphService;
-    }
+  public GraphController(GraphService graphService) {
+    this.graphService = graphService;
+  }
 
-    @GetMapping("/api/dashboard/monthly")
-    public List<GraphDTO> getMonthlyGraph() {
-        return graphService.getMonthlyGraph();
-    }
+  @GetMapping("/api/dashboard/monthly")
+  public List<GraphDTO> getMonthlyGraph() {
+    return graphService.getMonthlyGraph();
+  }
 
-    // 전체 대리점 목록 API
-    @GetMapping("/api/dashboard/agencies") // URL 수정: /api/dashboard/agencies
-    public List<AgencyEntity> getAllAgencies() {
-        return graphService.getAllAgencies(); // 반환 타입 맞춤
-    }
+  // 전체 대리점 목록 API
+  @GetMapping("/api/dashboard/agencies") // URL 수정: /api/dashboard/agencies
+  public List<AgencyEntity> getAllAgencies() {
+    return graphService.getAllAgencies(); // 반환 타입 맞춤
+  }
 }

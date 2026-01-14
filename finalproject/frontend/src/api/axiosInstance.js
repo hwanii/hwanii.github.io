@@ -1,4 +1,3 @@
-// src/api/axiosInstance.js
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext.jsx";
 import axios from "axios";
@@ -8,7 +7,7 @@ export const useApi = () => {
     const { token, logout } = useContext(AuthContext);
 
     const instance = axios.create({
-        baseURL: "http://13.124.172.253:8080",
+        baseURL: "http://localhost:8080",
         withCredentials: true,
     });
 
@@ -43,7 +42,7 @@ export const useApi = () => {
 
 // ===================== 일반 JS용 인스턴스 =====================
 export const api = axios.create({
-    baseURL: "http://13.124.172.253:8080",
+    baseURL: "http://localhost:8080",
     withCredentials: true,
 });
 
@@ -57,7 +56,7 @@ api.interceptors.request.use(
     (error) => Promise.reject(error)
 );
 
-// ✅ 응답 인터셉터 추가
+// 응답 인터셉터 추가
 api.interceptors.response.use(
     (response) => response,
     (error) => {

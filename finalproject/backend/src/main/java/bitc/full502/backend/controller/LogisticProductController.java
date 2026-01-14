@@ -14,30 +14,30 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:5173")
 public class LogisticProductController {
 
-    private final LogisticProductService service;
+  private final LogisticProductService service;
 
-    @GetMapping("/logisticproducts")
-    public List<LogisticProductDTO> getLogisticProducts(
-            @RequestParam(defaultValue = "lgName") String sortField,
-            @RequestParam(defaultValue = "asc") String sortOrder
-    ) {
-        return service.getAllLogisticProducts(sortField, sortOrder);
-    }
+  @GetMapping("/logisticproducts")
+  public List<LogisticProductDTO> getLogisticProducts(
+      @RequestParam(defaultValue = "lgName") String sortField,
+      @RequestParam(defaultValue = "asc") String sortOrder
+  ) {
+    return service.getAllLogisticProducts(sortField, sortOrder);
+  }
 
-    @GetMapping("/logisticproduct")
-    public List<LogisticProductDTO> getLogisticProducts(
-            @RequestParam(defaultValue = "lgName") String sortField,
-            @RequestParam(defaultValue = "asc") String sortOrder,
-            Authentication auth
-    ) {
+  @GetMapping("/logisticproduct")
+  public List<LogisticProductDTO> getLogisticProducts(
+      @RequestParam(defaultValue = "lgName") String sortField,
+      @RequestParam(defaultValue = "asc") String sortOrder,
+      Authentication auth
+  ) {
 
-        return service.getAllLogisticProducts(sortField, sortOrder);
-    }
+    return service.getAllLogisticProducts(sortField, sortOrder);
+  }
 
-    @GetMapping("/logisticproducts/mine")
-    public List<LogisticProductDTO> getMyStocks(Authentication auth) {
-        String loginId = (auth != null) ? auth.getName() : null;
-        if (loginId == null) return List.of(); // 로그인 없으면 빈 리스트 반환
-        return service.findMine(loginId);
-    }
+  @GetMapping("/logisticproducts/mine")
+  public List<LogisticProductDTO> getMyStocks(Authentication auth) {
+    String loginId = (auth != null) ? auth.getName() : null;
+    if (loginId == null) return List.of(); // 로그인 없으면 빈 리스트 반환
+    return service.findMine(loginId);
+  }
 }

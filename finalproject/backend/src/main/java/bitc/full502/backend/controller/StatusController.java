@@ -12,10 +12,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class StatusController {
 
-    private final StatusService statusService;
+  private final StatusService statusService;
 
-    @GetMapping("/api/status")
-    public List<StatusDTO> getStatusList() {
-        return statusService.findAllStatus();
-    }
+  @GetMapping("/api/status")
+  public List<StatusDTO> getStatusList() {
+    return statusService.findAllStatus();
+  }
 }

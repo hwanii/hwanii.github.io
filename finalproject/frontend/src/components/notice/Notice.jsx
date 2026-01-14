@@ -1,21 +1,15 @@
 import {useEffect, useMemo, useState, forwardRef, useImperativeHandle, useContext} from 'react';
 import axios from 'axios';
 import styles from './notice.module.css';
-
-// 정환 추가
 import { AuthContext } from '../../context/AuthContext.jsx';
-// 정환 추가
 
-const API_URL = 'http://13.124.172.253:8080/api/notices';
+const API_URL = 'http://localhost:8080/api/notices';
 
 // role: 'head_office' | 'logistic' | 'agency'
 const Notice = forwardRef(function Notice({ role = 'head_office', limit = Infinity, onNoticeClick }, ref) {
     const [items, setItems] = useState([]);
     const [error, setError] = useState(null);
-
-    // 정환 추가
     const { token } = useContext(AuthContext);
-    // 정환 추가
 
     const codes = useMemo(() => {
         const map = { head_office: 1, logistic: 2, agency: 3 };
@@ -27,10 +21,7 @@ const Notice = forwardRef(function Notice({ role = 'head_office', limit = Infini
         try {
             const res = await axios.get(API_URL, {
                 params: { codes },
-
-                // 정환 추가
                 headers: { Authorization: `Bearer ${token}` }
-                // 정환 추가
             });
             
             // 최신 등록 순으로 정렬 (내림차순)
@@ -54,21 +45,19 @@ const Notice = forwardRef(function Notice({ role = 'head_office', limit = Infini
         }
     };
 
-    // 정환 수정
     useEffect(() => {
         if (token) {
             console.log('fetchList 실행', token);
             fetchList();
         }
     }, [codes, token]);
-    // 정환 수정
 
     // ref를 통해 부모 컴포넌트에서 새로고침할 수 있도록 메서드 노출
     useImperativeHandle(ref, () => ({
         refresh: () => {
             fetchList();
         }
-    }), [codes, token]); // 정환 수정
+    }), [codes, token]);
 
     if (error) {
         return <div className={styles.noticeList}>공지 로드 실패: {error.message}</div>;
@@ -83,7 +72,7 @@ const Notice = forwardRef(function Notice({ role = 'head_office', limit = Infini
     const limitedItems = items.slice(0, effectiveLimit);
 
     return (
-        // 진경 수정 : 물류와 대리점 css 다르게 적용
+        // 물류와 대리점 css 다르게 적용
         <div className={`${styles.noticeList} ${styles[`noticeList_${role}`] || ''}`}>
             <ul>
                 {limitedItems.map(n => (

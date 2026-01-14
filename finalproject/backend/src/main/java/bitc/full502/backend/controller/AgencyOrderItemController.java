@@ -16,12 +16,12 @@ import java.util.Map;
 @RequiredArgsConstructor
 @CrossOrigin(origins = "http://localhost:5173")
 public class AgencyOrderItemController {
-    private final AgencyOrderItemService itemrepo;
+  private final AgencyOrderItemService itemrepo;
 
-    @GetMapping("/items/{orKey}")
-    public List<AgencyOrderItemDTO> getItems(@PathVariable int orKey) {
-        return itemrepo.getItemsByOrderKey(orKey);  // <-- 여기 수정
-    }
+  @GetMapping("/items/{orKey}")
+  public List<AgencyOrderItemDTO> getItems(@PathVariable int orKey) {
+    return itemrepo.getItemsByOrderKey(orKey);  // <-- 여기 수정
+  }
 
 
 

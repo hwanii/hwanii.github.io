@@ -31,7 +31,7 @@ import Logistic_Order_Detail from "./components/Logistic/Logistic_Order_Detail.j
 // 대리점 영역
 // =========================
 import AgencyIndexPage from "./components/Agency/AgencyIndexPage.jsx";
-import AgencyOrders from "./components/Agency/Orders.jsx"; // 이름 충돌 방지
+import AgencyOrders from "./components/Agency/Orders.jsx";
 import OrdersDraft from "./components/Agency/OrdersDraft.jsx";
 import OrderStatus from "./components/Agency/OrderStatus.jsx";
 import InventoryManagement from "./components/Agency/InventoryManagement.jsx";
@@ -53,29 +53,27 @@ function App() {
           <Route path="/mypageAgency" element={<MyPageAgency />} />
           <Route path="/mypageLogistic" element={<MyPageLogistic />} />
 
-                {/* ========================= 본사 영역 ========================= */}
-                <Route path="/head/*" element={<HeadIndex />}></Route>
-                <Route path="/agencyorder-popup/:orKey" element={<OrderDetail />} />
+          {/* ========================= 본사 영역 ========================= */}
+          <Route path="/head/*" element={<HeadIndex />}></Route>
+          <Route path="/agencyorder-popup/:orKey" element={<OrderDetail />} />
 
-                {/* ========================= 물류 영역 ========================= */}
-                <Route path="/logistic" element={<Logistic_Layout />}>
-                    <Route index element={<Logistic_Main />} />
-                    <Route path="Logistic_Orders" element={<Logistic_Orders />} />
-                    <Route path="Logistic_Stock" element={<Logistic_Stock />} />
-                </Route>
-                <Route path="/order-detail/:orKey" element={<Logistic_Order_Detail />} />
+          {/* ========================= 물류 영역 ========================= */}
+          <Route path="/logistic" element={<Logistic_Layout />}>
+              <Route index element={<Logistic_Main />} />
+              <Route path="Logistic_Orders" element={<Logistic_Orders />} />
+              <Route path="Logistic_Stock" element={<Logistic_Stock />} />
+          </Route>
+          <Route path="/order-detail/:orKey" element={<Logistic_Order_Detail />} />
 
           {/* ========================= 대리점 영역 (Layout 없이) ========================= */}
 
           <Route path="/agency" element={<AgencyLayout />}>
             <Route index element={<AgencyIndexPage />} />   {/* 기본: 대시보드 */}
-
             <Route path="orders" element={<AgencyOrders />} />
             <Route path="orders-draft" element={<OrdersDraft />} />
             <Route path="order-status" element={<OrderStatus />} />
             <Route path="inventory-management" element={<InventoryManagement />} />
           </Route>
-
         </Routes>
       </BrowserRouter>
     </AuthProvider>

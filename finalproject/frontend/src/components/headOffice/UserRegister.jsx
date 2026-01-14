@@ -1,7 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
 import headStyles from './Head_jin.module.css';
-import popupStyles from './HeadPopup.module.css';
 
 function UserRegister({ onClose, onRegisterSuccess }) {
   const [form, setForm] = useState({
@@ -34,7 +33,7 @@ function UserRegister({ onClose, onRegisterSuccess }) {
     }
 
     try {
-      const res = await axios.get(`http://13.124.172.253:8080/api/users/check-id`, {
+      const res = await axios.get(`http://localhost:8080/api/users/check-id`, {
         params: { loginId: form.loginId }
       });
       setIdCheckStatus(res.data ? "unavailable" : "available");
@@ -52,7 +51,7 @@ function UserRegister({ onClose, onRegisterSuccess }) {
     }
 
     try {
-      const res = await axios.get(`http://13.124.172.253:8080/api/users/check-email`, {
+      const res = await axios.get(`http://localhost:8080/api/users/check-email`, {
         params: { email: form.email }
       });
       setEmailValid(res.data.valid);
@@ -85,7 +84,7 @@ function UserRegister({ onClose, onRegisterSuccess }) {
 
     try {
       // 업체명 중복 체크
-      const companyRes = await axios.get("http://13.124.172.253:8080/api/users/check-company", {
+      const companyRes = await axios.get("http://localhost:8080/api/users/check-company", {
         params: { userId: form.userId }
       });
 
@@ -136,8 +135,8 @@ function UserRegister({ onClose, onRegisterSuccess }) {
 
       // type에 따라 API 선택
       const apiUrl = form.type === "대리점"
-        ? "http://13.124.172.253:8080/api/agency/register"
-        : "http://13.124.172.253:8080/api/logistic/register";
+        ? "http://localhost:8080/api/agency/register"
+        : "http://localhost:8080/api/logistic/register";
 
       const res = await axios.post(apiUrl, payload);
 

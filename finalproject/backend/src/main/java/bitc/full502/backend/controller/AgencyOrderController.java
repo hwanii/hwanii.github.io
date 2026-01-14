@@ -20,120 +20,120 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class AgencyOrderController {
 
-    private final AgencyOrderService service;
-    private final AgencyOrderItemService itemService;
-    private final AgencyOrderRepository orderRepository;
+  private final AgencyOrderService service;
+  private final AgencyOrderItemService itemService;
+  private final AgencyOrderRepository orderRepository;
 
-    //============================================================
-    // 1️⃣ 물류팀 테스트용 API (충돌 없는 경우 유지)
-    //============================================================
-    @GetMapping("/full")
-    public List<AgencyOrderDTO> getAll() {
-        return service.findAll();
+  //============================================================
+  // 물류팀 테스트용 API (충돌 없는 경우 유지)
+  //============================================================
+  @GetMapping("/full")
+  public List<AgencyOrderDTO> getAll() {
+    return service.findAll();
+  }
+
+  @GetMapping("/full/{orKey}")
+  public ResponseEntity<AgencyOrderDTO> getOneFull(@PathVariable int orKey) {
+    AgencyOrderDTO dto = service.findFullById(orKey);
+    return (dto != null) ? ResponseEntity.ok(dto) : ResponseEntity.notFound().build();
+  }
+
+
+  @GetMapping("/full/mine")
+  public List<AgencyOrderDTO> getMine(Authentication auth) {
+    String loginId = (auth != null) ? auth.getName() : null;
+    boolean isHQ = auth != null && auth.getAuthorities().stream()
+        .anyMatch(a -> a.getAuthority().equals("ROLE_HQ"));
+    return service.findMineByLoginId(loginId, isHQ);
+  }
+
+
+
+
+
+  // 특정 대리점 주문 목록 조회 (상태 필터링 가능)
+  @GetMapping
+  public ResponseEntity<List<AgencyOrderEntity>> getOrders(
+      @RequestParam int agencyId,
+      @RequestParam(required = false) String status
+  ) {
+    return ResponseEntity.ok(service.getOrders(agencyId, status));
+  }
+
+  // 주문 삭제
+  @DeleteMapping("/{id}")
+  public ResponseEntity<Void> deleteOrder(@PathVariable("id") int id) {
+    if (!orderRepository.existsById(id)) {
+      return ResponseEntity.notFound().build();
+    }
+    orderRepository.deleteById(id);
+    return ResponseEntity.noContent().build();
+  }
+
+  @GetMapping("/search")
+  public List<OrderResponseDTO> getOrder(@RequestParam(required = false) Map<String, String> searchParams) {
+    if (searchParams == null || searchParams.isEmpty()) {
+      return service.getAllOrders();
+    }
+    return service.searchOrders(searchParams);
+  }
+
+  @PostMapping("/confirm/order")
+  public void confirmOrder(@RequestBody Map<String, List<Integer>> request) {
+    List<Integer> orderIds = request.get("orderIds");
+    service.confirmOrders(orderIds);
+  }
+
+  // 주문 아이템 조회
+  @GetMapping("/items/{orKey}")
+  public List<AgencyOrderItemDTO> getItems(@PathVariable int orKey) {
+    return itemService.getItemsByOrderKey(orKey);
+  }
+
+  // 주문 상세 조회
+  @GetMapping("/{orKey}/info")
+  public AgencyOrderInfoDTO getOrderInfo(@PathVariable int orKey) {
+    return itemService.getOrderInfo(orKey);
+  }
+
+  // 운전기사 포함 상태 업데이트
+  @PutMapping("/{orKey}/status-with-driver")
+  public ResponseEntity<Void> updateStatusWithDriver(
+      @PathVariable int orKey,
+      @RequestBody Map<String, Object> body) {
+
+    String status = (String) body.get("status");
+    String dvName = (String) body.get("dvName");
+    Integer dvKey = body.get("dvKey") != null ? (Integer) body.get("dvKey") : null;
+
+    if (dvName == null || dvName.isBlank()) {
+      return ResponseEntity.badRequest().build();
     }
 
-    @GetMapping("/full/{orKey}")
-    public ResponseEntity<AgencyOrderDTO> getOneFull(@PathVariable int orKey) {
-        AgencyOrderDTO dto = service.findFullById(orKey);
-        return (dto != null) ? ResponseEntity.ok(dto) : ResponseEntity.notFound().build();
-    }
+    // ✅ 상태와 기사명 업데이트 + 대리점 재고 증가
+    service.updateOrderStatusWithDriver(orKey, status, dvName, dvKey);
+
+    return ResponseEntity.ok().build();
+  }
 
 
-    @GetMapping("/full/mine")
-    public List<AgencyOrderDTO> getMine(Authentication auth) {
-        String loginId = (auth != null) ? auth.getName() : null;
-        boolean isHQ = auth != null && auth.getAuthorities().stream()
-                .anyMatch(a -> a.getAuthority().equals("ROLE_HQ"));
-        return service.findMineByLoginId(loginId, isHQ);
-    }
+  // 대리점용: 기사 포함 주문 조회
+  @GetMapping("/with-driver")
+  public ResponseEntity<List<AgencyOrderDTO>> getOrdersWithDriver(
+      @RequestParam int agencyId,
+      @RequestParam(required = false) String status) {
 
-
-
-
-
-    // 특정 대리점 주문 목록 조회 (상태 필터링 가능)
-    @GetMapping
-    public ResponseEntity<List<AgencyOrderEntity>> getOrders(
-        @RequestParam int agencyId,
-        @RequestParam(required = false) String status
-    ) {
-        return ResponseEntity.ok(service.getOrders(agencyId, status));
-    }
-
-    // 주문 삭제
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteOrder(@PathVariable("id") int id) {
-        if (!orderRepository.existsById(id)) {
-            return ResponseEntity.notFound().build();
-        }
-        orderRepository.deleteById(id);
-        return ResponseEntity.noContent().build();
-    }
-
-    @GetMapping("/search")
-    public List<OrderResponseDTO> getOrder(@RequestParam(required = false) Map<String, String> searchParams) {
-        if (searchParams == null || searchParams.isEmpty()) {
-            return service.getAllOrders();
-        }
-        return service.searchOrders(searchParams);
-    }
-
-    @PostMapping("/confirm/order")
-    public void confirmOrder(@RequestBody Map<String, List<Integer>> request) {
-        List<Integer> orderIds = request.get("orderIds");
-        service.confirmOrders(orderIds);
-    }
-
-    // 주문 아이템 조회
-    @GetMapping("/items/{orKey}")
-    public List<AgencyOrderItemDTO> getItems(@PathVariable int orKey) {
-        return itemService.getItemsByOrderKey(orKey);
-    }
-
-    // 주문 상세 조회
-    @GetMapping("/{orKey}/info")
-    public AgencyOrderInfoDTO getOrderInfo(@PathVariable int orKey) {
-        return itemService.getOrderInfo(orKey);
-    }
-
-    // 운전기사 포함 상태 업데이트
-    @PutMapping("/{orKey}/status-with-driver")
-    public ResponseEntity<Void> updateStatusWithDriver(
-            @PathVariable int orKey,
-            @RequestBody Map<String, Object> body) {
-
-        String status = (String) body.get("status");
-        String dvName = (String) body.get("dvName");
-        Integer dvKey = body.get("dvKey") != null ? (Integer) body.get("dvKey") : null;
-
-        if (dvName == null || dvName.isBlank()) {
-            return ResponseEntity.badRequest().build();
-        }
-
-        // ✅ 상태와 기사명 업데이트 + 대리점 재고 증가
-        service.updateOrderStatusWithDriver(orKey, status, dvName, dvKey);
-
-        return ResponseEntity.ok().build();
-    }
-
-
-    // 대리점용: 기사 포함 주문 조회
-    @GetMapping("/with-driver")
-    public ResponseEntity<List<AgencyOrderDTO>> getOrdersWithDriver(
-            @RequestParam int agencyId,
-            @RequestParam(required = false) String status) {
-
-        List<AgencyOrderDTO> orders = service.getOrdersWithDriver(agencyId, status);
-        return ResponseEntity.ok(orders);
-    }
+    List<AgencyOrderDTO> orders = service.getOrdersWithDriver(agencyId, status);
+    return ResponseEntity.ok(orders);
+  }
 
 
 
-    @GetMapping("/schedule")
-    public List<AgencyOrderDTO> schedule(
-            @RequestParam("from") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate from,
-            @RequestParam("to")   @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate to
-    ) {
-        return service.getSchedule(from, to); // ← 변환 없음
-    }
+  @GetMapping("/schedule")
+  public List<AgencyOrderDTO> schedule(
+      @RequestParam("from") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate from,
+      @RequestParam("to")   @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate to
+  ) {
+    return service.getSchedule(from, to); // ← 변환 없음
+  }
 }

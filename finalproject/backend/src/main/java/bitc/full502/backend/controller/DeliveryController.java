@@ -16,24 +16,24 @@ import java.util.Map;
 @CrossOrigin(origins = "http://localhost:5173")
 public class DeliveryController {
 
-    private final DeliveryService deliveryService ;
+  private final DeliveryService deliveryService ;
 
-    @GetMapping
-    public List<DeliveryDTO> list() {
-        return deliveryService.findAll();
-    }
+  @GetMapping
+  public List<DeliveryDTO> list() {
+    return deliveryService.findAll();
+  }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<DeliveryDTO> one(@PathVariable int id) {
-        DeliveryDTO dto = deliveryService.findById(id);
-        return (dto != null) ? ResponseEntity.ok(dto) : ResponseEntity.notFound().build();
-    }
+  @GetMapping("/{id}")
+  public ResponseEntity<DeliveryDTO> one(@PathVariable int id) {
+    DeliveryDTO dto = deliveryService.findById(id);
+    return (dto != null) ? ResponseEntity.ok(dto) : ResponseEntity.notFound().build();
+  }
 
-    @PutMapping("/{id}/status")
-    public ResponseEntity<Void> updateStatus(@PathVariable int id, @RequestParam Map<String,Object> body) {
-        String status = String.valueOf(body.getOrDefault("status","대기중"));
-        boolean on = Boolean.parseBoolean(String.valueOf(body.getOrDefault("delivery", false)));
-        deliveryService.updateDriverStatus(id, status, on);
-        return ResponseEntity.noContent().build();
-    }
+  @PutMapping("/{id}/status")
+  public ResponseEntity<Void> updateStatus(@PathVariable int id, @RequestParam Map<String,Object> body) {
+    String status = String.valueOf(body.getOrDefault("status","대기중"));
+    boolean on = Boolean.parseBoolean(String.valueOf(body.getOrDefault("delivery", false)));
+    deliveryService.updateDriverStatus(id, status, on);
+    return ResponseEntity.noContent().build();
+  }
 }

@@ -10,14 +10,14 @@ import java.util.List;
 @RequestMapping("/api/agency")
 public class InventoryController {
 
-    private final InventoryService inventoryService;
+  private final InventoryService inventoryService;
 
-    public InventoryController(InventoryService inventoryService) {
-        this.inventoryService = inventoryService;
-    }
+  public InventoryController(InventoryService inventoryService) {
+    this.inventoryService = inventoryService;
+  }
 
-    @GetMapping("/{agencyId}/inventory")
-    public List<InventoryDTO> getAgencyInventory(@PathVariable int agencyId) {
-        return inventoryService.getAgencyInventory(agencyId);
-    }
+  @GetMapping("/{agencyId}/inventory")
+  public List<InventoryDTO> getAgencyInventory(@PathVariable int agencyId) {
+    return inventoryService.getAgencyInventory(agencyId);
+  }
 }
