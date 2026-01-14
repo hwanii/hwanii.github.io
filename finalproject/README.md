@@ -1,4 +1,4 @@
-User Authentication Project
+# User Authentication Project
 
 Spring Security와 JWT를 활용한 사용자 인증 중심의 풀스택 웹 애플리케이션입니다.
 회원가입, 로그인, 로그아웃, 토큰 발급 및 인증 흐름을 직접 설계하고 구현했습니다.
